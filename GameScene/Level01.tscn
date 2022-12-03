@@ -46,12 +46,15 @@ position = Vector2( 506, 5 )
 shape = SubResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 504, 537 )
+position = Vector2( 485, 542 )
 
 [node name="respawntimer" type="Timer" parent="."]
 autostart = true
 
 [node name="bossspawntimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
 
 [node name="spread" parent="." instance=ExtResource( 3 )]
 position = Vector2( 485, 362 )
