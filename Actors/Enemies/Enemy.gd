@@ -14,5 +14,4 @@ func set_armor(value):
 
 
 func _on_VisibilityNotifier2D_screen_exited():
-	print("enemy outside screen")
 	queue_free()

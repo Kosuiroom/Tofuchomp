@@ -1,3 +1,3 @@
 extends Node
 
-var playerhealth
+var dmg = 1

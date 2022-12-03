@@ -11,5 +11,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_Laser_area_entered(area):
 	if area.is_in_group("enemy"):
-		area.armor -= 1
+		area.armor -= Global.dmg
+		print("dmg: ", Global.dmg)
 		queue_free()

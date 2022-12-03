@@ -1,10 +1,12 @@
 extends KinematicBody2D
 
 export var speed := 200
-export var armor = 4 setget set_armor
+export var armor = 1 setget set_armor
 
 var velocity := Vector2()
-var bullet_scene = preload("res://Actors/Player/Laser.tscn")
+var e_laser = preload("res://Actors/Player/Laser.tscn")
+var spread := false
+var biglaser:= false
 
 func _physics_process(_delta: float) -> void:
 	var direction := Vector2(
@@ -19,17 +21,38 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("shoot"):
 		fire()
 
-
 func fire():
-	var bullet = bullet_scene.instance()
-	bullet.direction = $Position2D.global_position - global_position
-	bullet.global_position = $Position2D.global_position
-	get_tree().get_root().add_child(bullet)
-
+	if spread:
+		Global.dmg = 1
+		var Lbullet = e_laser.instance()
+		Lbullet.direction = $left.global_position - global_position
+		Lbullet.global_position = $left.global_position
+		get_tree().get_root().add_child(Lbullet)
+		
+		var Mbullet = e_laser.instance()
+		Mbullet.direction = $middle.global_position - global_position
+		Mbullet.global_position = $middle.global_position
+		get_tree().get_root().add_child(Mbullet)
+		
+		var Rbullet = e_laser.instance()
+		Rbullet.direction = $right.global_position - global_position
+		Rbullet.global_position = $right.global_position
+		get_tree().get_root().add_child(Rbullet)
+	elif biglaser:
+		Global.dmg = 4
+		var bullet = e_laser.instance()
+		bullet.direction = $middle.global_position - global_position
+		bullet.global_position = $middle.global_position
+		get_tree().get_root().add_child(bullet)
+	else:
+		Global.dmg = 1
+		var bullet = e_laser.instance()
+		bullet.direction = $middle.global_position - global_position
+		bullet.global_position = $middle.global_position
+		get_tree().get_root().add_child(bullet)
 
 func set_armor(value):
 	armor = value
 	print("armor is: ", armor)
 	if armor <= 0: 
 		queue_free()
-	
