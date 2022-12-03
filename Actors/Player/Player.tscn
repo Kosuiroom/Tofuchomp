@@ -6,7 +6,7 @@
 load_path = "res://.import/Tofuchomp_Player.png-287947d1f82ff51f37d9aaea3918390e.stex"
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 16.5131, 22.003 )
+extents = Vector2( 4.07731, 6.30296 )
 
 [sub_resource type="Animation" id=4]
 length = 0.2
