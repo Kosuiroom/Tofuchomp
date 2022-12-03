@@ -1,26 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Assets/PixelFont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/UI/Endgame.gd" type="Script" id=4]
-
-[sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 1 )
-
-[sub_resource type="Theme" id=2]
-default_font = SubResource( 1 )
-
-[sub_resource type="Theme" id=13]
-
-[sub_resource type="DynamicFont" id=14]
-size = 45
-outline_size = 1
-font_data = ExtResource( 1 )
-
-[sub_resource type="Theme" id=4]
-
-[sub_resource type="DynamicFont" id=5]
-size = 72
-font_data = ExtResource( 1 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -42,8 +22,7 @@ margin_top = 134.0
 margin_right = 570.0
 margin_bottom = 165.0
 rect_scale = Vector2( 3, 3 )
-theme = SubResource( 2 )
-text = "TIME:"
+text = "Final Score:"
 align = 2
 
 [node name="RichTextLabel3" type="Label" parent="."]
@@ -51,8 +30,6 @@ margin_left = 752.0
 margin_top = 386.0
 margin_right = 1597.0
 margin_bottom = 743.0
-theme = SubResource( 13 )
-custom_fonts/font = SubResource( 14 )
 text = "MADE BY: 
 DAVID BYSTRÖM
 PONTUS GÖTH
@@ -66,8 +43,6 @@ margin_left = 96.0
 margin_top = 386.0
 margin_right = 576.0
 margin_bottom = 586.0
-theme = SubResource( 13 )
-custom_fonts/font = SubResource( 14 )
 text = "FOR GMTK 2022
 GAMEJAM
 "
@@ -77,8 +52,6 @@ margin_left = 444.0
 margin_top = 59.0
 margin_right = 884.0
 margin_bottom = 123.0
-theme = SubResource( 13 )
-custom_fonts/font = SubResource( 14 )
 text = "GAME CLEARED"
 
 [node name="MenuItems" type="VBoxContainer" parent="."]
@@ -94,9 +67,7 @@ margin_bottom = 123.0
 
 [node name="Return" type="Button" parent="MenuItems"]
 margin_right = 822.0
-margin_bottom = 8.0
-theme = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
+margin_bottom = 20.0
 text = "RETURN TO START "
 flat = true
 __meta__ = {

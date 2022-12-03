@@ -56,4 +56,11 @@ func set_armor(value):
 	armor = value
 	print("armor is: ", armor)
 	if armor <= 0: 
-		queue_free()
+		is_killed()
+		
+func is_killed():
+#	Global.is_dead = true
+#	print("player died")
+#	Global.batterycharge = 5
+	yield(get_tree().create_timer(3), "timeout")
+	get_tree().change_scene("res://UI/Endgame.tscn")
