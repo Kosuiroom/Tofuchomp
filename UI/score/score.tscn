@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/score/Label.gd" type="Script" id=1]
+
+[node name="score" type="Node2D"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_top = -3.0
+margin_right = 205.0
+margin_bottom = 20.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 205.0
+margin_bottom = 16.0
+text = "SCORE BOARD"
+align = 1
+script = ExtResource( 1 )
