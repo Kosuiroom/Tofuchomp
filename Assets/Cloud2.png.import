@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tofuchomp_Clouds.png-d6ba8155c23860d967de2681df22476e.stex"
+path="res://.import/Cloud2.png-011264ed42227741674593ce85f399ca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tofuchomp_Clouds.png"
-dest_files=[ "res://.import/Tofuchomp_Clouds.png-d6ba8155c23860d967de2681df22476e.stex" ]
+source_file="res://Assets/Cloud2.png"
+dest_files=[ "res://.import/Cloud2.png-011264ed42227741674593ce85f399ca.stex" ]
 
 [params]
 
