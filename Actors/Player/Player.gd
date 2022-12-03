@@ -5,6 +5,7 @@ export var armor = 1 setget set_armor
 
 var velocity := Vector2()
 var e_laser = preload("res://Actors/Player/Laser.tscn")
+var e_biglaser = preload("res://Actors/Player/biglaser.tscn")
 var spread := false
 var biglaser:= false
 
@@ -40,7 +41,7 @@ func fire():
 		get_tree().get_root().add_child(Rbullet)
 	elif biglaser:
 		Global.dmg = 4
-		var bullet = e_laser.instance()
+		var bullet = e_biglaser.instance()
 		bullet.direction = $middle.global_position - global_position
 		bullet.global_position = $middle.global_position
 		get_tree().get_root().add_child(bullet)

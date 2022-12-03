@@ -1,15 +1,16 @@
 extends Area2D
 
 var direction := Vector2.UP;
-var speed = 400
+var speed = 300
 
 func _process(delta):
 	translate(direction.normalized() * speed * delta)
 
-func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()
+func _on_VisibilityNotifier2D_viewport_exited(viewport):
+		queue_free()
 
-func _on_Laser_area_entered(area):
+
+func _on_biglaser_area_entered(area):
 	if area.is_in_group("enemy"):
 		area.armor -= Global.dmg
 		queue_free()
