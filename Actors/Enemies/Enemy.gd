@@ -5,8 +5,8 @@ export var speed := 200
 export var armor: = 2 setget set_armor
 
 func _process(delta):
-#	translate(velocity.normalized() * speed * delta)
-	pass
+	translate(velocity.normalized() * speed * delta)
+
 
 #TODO: delete enemy when it exists the screen	
 #	if get_position_in_parent().y >= get_viewport_rect().size.height:

@@ -6,7 +6,7 @@
 load_path = "res://.import/Tofuchomp_Player.png-287947d1f82ff51f37d9aaea3918390e.stex"
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 4.07731, 6.30296 )
+extents = Vector2( 16.5131, 22.003 )
 
 [sub_resource type="Animation" id=4]
 length = 0.2
@@ -25,24 +25,28 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D" groups=["player"]]
-position = Vector2( 9, -1 )
+position = Vector2( 0, 1 )
 collision_mask = 14
 script = ExtResource( 1 )
+speed = 400
 armor = 1
 
 [node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 7.62939e-06, 0 )
+scale = Vector2( 2.36719, 2.10938 )
 texture = SubResource( 3 )
 __meta__ = {
 "_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PUFuaW1hdGlvblBsYXllcgpzb3VyY2V8PUM6L1VzZXJzL0RhdmlkL09uZURyaXZlL0JpbGRlci9hcnQvQXNlc3ByaXRlL1Byb2plY3RzL1RvZnVjaG9tcC9Ub2Z1Y2hvbXBfUGxheWVyLmFzZXByaXRlCmxheWVyfD0Kb3BfZXhwfD1GYWxzZQpvX2ZvbGRlcnw9cmVzOi8vQXNzZXRzCm9fbmFtZXw9Cm9ubHlfdmlzaWJsZXw9RmFsc2UKb19leF9wfD0K"
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.250015, 1.00001 )
 rotation = -3.14159
 scale = Vector2( 1.2263, -1.09076 )
 shape = SubResource( 2 )
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 1, -31 )
+position = Vector2( -2, -44 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Tag = SubResource( 4 )
