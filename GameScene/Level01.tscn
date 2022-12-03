@@ -45,8 +45,14 @@ shape = SubResource( 3 )
 position = Vector2( 506, 5 )
 shape = SubResource( 3 )
 
+[node name="spread" parent="." instance=ExtResource( 3 )]
+position = Vector2( 485, 362 )
+
+[node name="biglaser" parent="." instance=ExtResource( 5 )]
+position = Vector2( 694, 386 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 485, 542 )
+position = Vector2( 500, 504 )
 
 [node name="respawntimer" type="Timer" parent="."]
 autostart = true
@@ -55,12 +61,6 @@ autostart = true
 wait_time = 5.0
 one_shot = true
 autostart = true
-
-[node name="spread" parent="." instance=ExtResource( 3 )]
-position = Vector2( 485, 362 )
-
-[node name="biglaser" parent="." instance=ExtResource( 5 )]
-position = Vector2( 694, 386 )
 
 [connection signal="timeout" from="respawntimer" to="." method="_on_respawntimer_timeout"]
 [connection signal="timeout" from="bossspawntimer" to="." method="_on_bossspawntimer_timeout"]

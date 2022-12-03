@@ -27,4 +27,4 @@ func _on_bossspawntimer_timeout():
 	print("spawning boss")
 	var e = boss.instance()
 	add_child(e)
-	e.position = Vector2(500,-200)
+	e.position = Vector2(500,-170)
