@@ -18,7 +18,6 @@ func set_armor(value):
 		queue_free()
 
 func _on_smallenemy_body_entered(body):
-	print("someone touched me")
 	if body.is_in_group("player"):
 		body.armor -= 1
 		queue_free()

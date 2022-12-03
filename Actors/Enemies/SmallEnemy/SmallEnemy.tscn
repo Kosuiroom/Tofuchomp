@@ -7,7 +7,7 @@ extents = Vector2( 11.5, 12.5 )
 
 [node name="smallenemy" instance=ExtResource( 1 )]
 velocity = Vector2( 0, 50 )
-speed = 50
+armor = 1
 
 [node name="hitbox" parent="." index="1"]
 position = Vector2( -2.5, 2.5 )

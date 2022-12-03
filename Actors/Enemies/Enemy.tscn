@@ -7,7 +7,7 @@
 
 [node name="enemy" type="Area2D" groups=["enemy"]]
 script = ExtResource( 2 )
-speed = 100
+speed = 400
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
