@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Spr_Water.png-4c326465e250bc5e44e2a49666cbd8b2.stex"
+path="res://.import/Tofuchomp_Player.png-ef058c2749975a8a9fb16520ee71708d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Spr_Water.png"
-dest_files=[ "res://.import/Spr_Water.png-4c326465e250bc5e44e2a49666cbd8b2.stex" ]
+source_file="res://Actors/Player/Tofuchomp_Player.png"
+dest_files=[ "res://.import/Tofuchomp_Player.png-ef058c2749975a8a9fb16520ee71708d.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
