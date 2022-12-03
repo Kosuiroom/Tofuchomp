@@ -10,6 +10,7 @@ extents = Vector2( 4.07731, 6.30296 )
 position = Vector2( 9, -1 )
 collision_mask = 14
 script = ExtResource( 1 )
+armor = 1
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 4 )
