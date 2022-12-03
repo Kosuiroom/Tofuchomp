@@ -24,3 +24,7 @@ func shot():
 		get_tree().get_root().add_child(Rbullet)
 		
 		yield(get_tree().create_timer(1.25), "timeout")
+
+func _on_bigenemy_body_entered(body):
+	if body.is_in_group("player"):
+		body.armor -= 1
