@@ -20,9 +20,7 @@ func _physics_process(_delta: float) -> void:
 
 
 func fire():
-	print("Firing")
 	var bullet = bullet_scene.instance()
-	print("bullet instance", bullet)
 	bullet.direction = $Position2D.global_position - global_position
 	bullet.global_position = $Position2D.global_position
 	get_tree().get_root().add_child(bullet)
