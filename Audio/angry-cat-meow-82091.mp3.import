@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/angry-cat-meow-82091.mp3-61c543172b6fbbb898d52ddb3ce08058.mp3str"
+
+[deps]
+
+source_file="res://Audio/angry-cat-meow-82091.mp3"
+dest_files=[ "res://.import/angry-cat-meow-82091.mp3-61c543172b6fbbb898d52ddb3ce08058.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

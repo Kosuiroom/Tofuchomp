@@ -37,7 +37,7 @@ func _on_bossspawntimer_timeout():
 	remove_child(pup)
 	var e = boss.instance()
 	add_child(e)
-	e.position = Vector2(500,-70)
+	e.position = Vector2(400,-400)
 
 func _on_powerupspawner_timeout():
 	var xloc = rand_range(45,970)

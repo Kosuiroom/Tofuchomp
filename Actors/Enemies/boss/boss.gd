@@ -1,7 +1,6 @@
 extends Area2D
 
-onready var sprite = $Sprite
-export var velocity := Vector2()
+onready var sprite = $Body
 export var armor: = 50 setget set_armor
 
 ##Leftgun
@@ -13,28 +12,32 @@ var is_invinc = false
 
 ##middlegun
 onready var mm_gun = $middlegun/middlemiddle
+onready var player = get_tree().get_nodes_in_group("player")[0]
 
 ##rightgun
 onready var rl_gun = $rightgun/rightleft
 onready var rm_gun = $rightgun/rightmiddle
 onready var rr_gun = $rightgun/rightright
+onready var mjau = $mjau
+onready var laser = $lasershot
 
 var e_laser = preload("res://Actors/Enemies/enemylaser.tscn")
 var b_laser = preload("res://Actors/Enemies/enemybiglaser.tscn")
 
-export var mvspeed = 20
+export var mvspeed = 50
 var elapsed: float
 export var shotcount = 10
 
 var spread := true
 	
 func _process(delta):
-	position = position.move_toward(Vector2(500,70), delta * mvspeed)
+	position = position.move_toward(Vector2(400,200), delta * mvspeed)
 	
-	if position == Vector2(500,70):
+	if position == Vector2(400,200):
+		mjau.play()
 		invinc(false)
 		elapsed += delta
-		if elapsed > 1.25:
+		if elapsed > 0.5:
 			shot()
 			elapsed = 0
 	else:
@@ -54,50 +57,55 @@ func shot():
 	if shotcount <= 0:
 		spread = false
 		
-	if spread:	
+	if spread:
+		laser.play()	
 		shotleft()
 		shotright()
 		shotcount -= 1
 	else:
+		laser.play()
 		shotmiddle()
 		spread = true
 		shotcount = 10
 		
 func shotmiddle():
 		var mlbullet = b_laser.instance()
-		mlbullet.direction = mm_gun.global_position - global_position
+		var mshotdir = player.global_position
+		mlbullet.direction = mshotdir - global_position
 		mlbullet.global_position = mm_gun.global_position
 		get_tree().get_root().add_child(mlbullet)
 		
 func shotleft():
 		var Lbullet = e_laser.instance()
-		Lbullet.direction = Vector2(111,40)
+		var lshotdir = player.global_position
+		Lbullet.direction = lshotdir - global_position
 		Lbullet.global_position = ll_gun.global_position
 		get_tree().get_root().add_child(Lbullet)
 				
 		var Mbullet = e_laser.instance()
-		Mbullet.direction = Vector2(111,40)
+		Mbullet.direction = lshotdir - global_position
 		Mbullet.global_position = lm_gun.global_position
 		get_tree().get_root().add_child(Mbullet)
 				
 		var Rbullet = e_laser.instance()
-		Rbullet.direction = Vector2(111,40)
+		Rbullet.direction = lshotdir - global_position
 		Rbullet.global_position = lr_gun.global_position
 		get_tree().get_root().add_child(Rbullet)
 		
 func shotright():
+		var rshotdir = player.global_position
 		var Lbullet = e_laser.instance()
-		Lbullet.direction = Vector2(-111,40)
+		Lbullet.direction = rshotdir - global_position
 		Lbullet.global_position = rl_gun.global_position
 		get_tree().get_root().add_child(Lbullet)
 				
 		var Mbullet = e_laser.instance()
-		Mbullet.direction = Vector2(-111,40)
+		Mbullet.direction = rshotdir - global_position
 		Mbullet.global_position = rm_gun.global_position
 		get_tree().get_root().add_child(Mbullet)
 				
 		var Rbullet = e_laser.instance()
-		Rbullet.direction = Vector2(-111,40)
+		Rbullet.direction = rshotdir - global_position
 		Rbullet.global_position = rr_gun.global_position
 		get_tree().get_root().add_child(Rbullet)
 		

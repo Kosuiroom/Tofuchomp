@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Actors/Player/biglaser.gd" type="Script" id=1]
+[ext_resource path="res://Actors/Enemies/enemybiglaser.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Spr_Mushquito.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
