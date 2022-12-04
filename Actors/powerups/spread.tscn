@@ -2,8 +2,6 @@
 
 [ext_resource path="res://Actors/powerups/spread.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-
 [sub_resource type="StreamTexture" id=2]
 load_path = "res://.import/Tofuchomp_Spread Icon.png-28e998aaabef7034c4a92206cac0e107.stex"
 
@@ -23,16 +21,17 @@ tracks/0/keys = {
 "values": [ 0.0 ]
 }
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20, 10 )
+
 [node name="spread" type="Area2D"]
+scale = Vector2( 1.67683, 1.9004 )
 script = ExtResource( 2 )
 velocity = Vector2( 0, 50 )
 speed = 200
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
-
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 181, 157 )
+position = Vector2( 1, -4 )
 texture = SubResource( 2 )
 __meta__ = {
 "_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PVNwcml0ZS9BbmltYXRpb25QbGF5ZXIKc291cmNlfD1DOi9Vc2Vycy9EYXZpZC9PbmVEcml2ZS9CaWxkZXIvYXJ0L0FzZXNwcml0ZS9Qcm9qZWN0cy9Ub2Z1Y2hvbXAvVG9mdWNob21wX1NwcmVhZCBJY29uLmFzZXByaXRlCmxheWVyfD0Kb3BfZXhwfD1GYWxzZQpvX2ZvbGRlcnw9cmVzOi8vQXNzZXRzCm9fbmFtZXw9Cm9ubHlfdmlzaWJsZXw9VHJ1ZQpvX2V4X3B8PQo="
@@ -40,6 +39,10 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/default = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1, 0 )
+shape = SubResource( 1 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 

@@ -6,6 +6,7 @@ export var armor = 1 setget set_armor
 var velocity := Vector2()
 var e_laser = preload("res://Actors/Player/Laser.tscn")
 var e_biglaser = preload("res://Actors/Player/biglaser.tscn")
+onready var Anime = $AnimationPlayer
 onready var lasersound = $lasersound
 var spread := false
 var biglaser:= false
@@ -15,6 +16,14 @@ func _physics_process(_delta: float) -> void:
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
 		Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	)
+	
+	if Input.is_action_pressed("move_right"):
+		Anime.play("Turn_Right")
+	if Input.is_action_pressed("move_left"):
+		Anime.play("Turn_Left")
+		
+	if direction == Vector2(0,0):
+		Anime.play("Idle")
 
 	if direction.length() > 1.0:
 		direction = direction.normalized()

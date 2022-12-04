@@ -1,6 +1,8 @@
 extends "res://Actors/Enemies/Enemy.gd"
 
 var e_laser = preload("res://Actors/Enemies/enemylaser.tscn")
+onready var laser = $laser
+onready var anim = $Sprite2/AnimationPlayer
 
 func _ready():
 	yield(get_tree().create_timer(1), "timeout")
@@ -8,6 +10,8 @@ func _ready():
 
 func shot():
 	while true:
+		laser.play()
+		anim.play("Attack")
 		var Lbullet = e_laser.instance()
 		Lbullet.direction = $left.global_position - global_position
 		Lbullet.global_position = $left.global_position

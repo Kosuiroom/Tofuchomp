@@ -24,21 +24,23 @@ onready var laser = $lasershot
 var e_laser = preload("res://Actors/Enemies/enemylaser.tscn")
 var b_laser = preload("res://Actors/Enemies/enemybiglaser.tscn")
 
-export var mvspeed = 50
+export var mvspeed = 100
 var elapsed: float
 export var shotcount = 10
 
 var spread := true
+
+func _ready():
+	mjau.play()
 	
 func _process(delta):
 	position = position.move_toward(Vector2(400,200), delta * mvspeed)
 	
 	if position == Vector2(400,200):
-		mjau.play()
 		invinc(false)
 		elapsed += delta
 		if elapsed > 0.5:
-			shot()
+			shot(true)
 			elapsed = 0
 	else:
 		invinc(true)
@@ -50,13 +52,14 @@ func set_armor(value):
 		
 func is_killed():
 	sprite.visible = false
+	shot(false)
 	yield(get_tree().create_timer(2), "timeout")
 	get_tree().change_scene("res://UI/Endgame.tscn")
 
-func shot():
+func shot(val):
 	if shotcount <= 0:
 		spread = false
-		
+	
 	if spread:
 		laser.play()	
 		shotleft()

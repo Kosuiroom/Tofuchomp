@@ -1,7 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
 [sub_resource type="StreamTexture" id=3]
-flags = 4
 load_path = "res://.import/Cloud3.png-682f4faa0d6134dbe9a46b7adbd0bf2d.stex"
 
 [sub_resource type="Animation" id=2]

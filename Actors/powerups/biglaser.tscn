@@ -2,9 +2,6 @@
 
 [ext_resource path="res://Actors/powerups/biglaser.gd" type="Script" id=1]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 42, 9.5 )
-
 [sub_resource type="StreamTexture" id=2]
 load_path = "res://.import/Tofuchomp_Laser Icon.png-972e65b059426b3d6bbaaccfb58bdad3.stex"
 
@@ -24,17 +21,21 @@ tracks/0/keys = {
 "values": [ 0.0 ]
 }
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7, 27 )
+
 [node name="biglaser" type="Area2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 velocity = Vector2( 0, 50 )
 speed = 200
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -22, 54.5 )
-shape = SubResource( 1 )
-
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 19, 34 )
+position = Vector2( 1, 1 )
+scale = Vector2( 1.65848, 1.65848 )
 texture = SubResource( 2 )
 __meta__ = {
 "_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PVNwcml0ZS9BbmltYXRpb25QbGF5ZXIKc291cmNlfD1DOi9Vc2Vycy9EYXZpZC9PbmVEcml2ZS9CaWxkZXIvYXJ0L0FzZXNwcml0ZS9Qcm9qZWN0cy9Ub2Z1Y2hvbXAvVG9mdWNob21wX0xhc2VyIEljb24uYXNlcHJpdGUKbGF5ZXJ8PQpvcF9leHB8PUZhbHNlCm9fZm9sZGVyfD1yZXM6Ly9Bc3NldHMKb19uYW1lfD0Kb25seV92aXNpYmxlfD1UcnVlCm9fZXhfcHw9Cg=="
@@ -43,7 +44,12 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/default = SubResource( 3 )
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2, 2 )
+shape = SubResource( 1 )
+
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+scale = Vector2( 1.00386, 2.37108 )
 
 [connection signal="body_entered" from="." to="." method="_on_biglaser_body_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

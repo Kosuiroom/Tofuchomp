@@ -1,10 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Actors/Enemies/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Actors/Enemies/SmallEnemy/SmallEnemy.gd" type="Script" id=2]
-
-[sub_resource type="StreamTexture" id=2]
-load_path = "res://.import/Tofuchomp_Enemy_Bread Cat.png-7cd0531da1c04a157a8231d17c3f14a3.stex"
 
 [sub_resource type="Animation" id=3]
 length = 0.1
@@ -62,16 +59,7 @@ script = ExtResource( 2 )
 velocity = Vector2( 0, 50 )
 armor = 1
 
-[node name="Sprite" parent="." index="0"]
-texture = SubResource( 2 )
-hframes = 2
-vframes = 2
-frame = 1
-__meta__ = {
-"_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PVNwcml0ZS9BbmltYXRpb25QbGF5ZXIKc291cmNlfD1DOi9Vc2Vycy9EYXZpZC9PbmVEcml2ZS9CaWxkZXIvYXJ0L0FzZXNwcml0ZS9Qcm9qZWN0cy9Ub2Z1Y2hvbXAvVG9mdWNob21wX0VuZW15X0JyZWFkIENhdC5hc2Vwcml0ZQpsYXllcnw9Cm9wX2V4cHw9RmFsc2UKb19mb2xkZXJ8PXJlczovL0Fzc2V0cwpvX25hbWV8PQpvbmx5X3Zpc2libGV8PUZhbHNlCm9fZXhfcHw9Cg=="
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="0"]
+[node name="Sprite@AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 anims/Attack = SubResource( 3 )
 anims/Death = SubResource( 4 )
 anims/Idle = SubResource( 5 )
@@ -82,5 +70,7 @@ shape = SubResource( 1 )
 
 [node name="VisibilityNotifier2D" parent="." index="2"]
 position = Vector2( -1, 0 )
+
+[node name="Sprite" type="Sprite" parent="." index="3"]
 
 [connection signal="body_entered" from="." to="." method="_on_smallenemy_body_entered"]
