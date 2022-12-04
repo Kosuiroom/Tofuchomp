@@ -1,8 +1,51 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Audio/cutesong2_test.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Audio/flash_attack_2.mp3" type="AudioStream" id=2]
+[ext_resource path="res://UI/Title Background.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/UI/Endgame.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Tofuchomp_Player.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Tofuchomp_UI Final Score.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Tofuchomp_UI Pontus Göth.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Tofuchomp_UI Game Cleared.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Tofuchomp_UI Towe Andersson.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Tofuchomp_UI Made by.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Tofuchomp_UI David Byström.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Tofuchomp_UI Bar Selected.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Tofuchomp_UI Bar Unselected.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Tofuchomp_UI Return to start.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Tofuchomp_UI Music, Sound.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Tofuchomp_UI Art, Animation.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Tofuchomp_UI Programming, Design.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Kousui Room Logo.png" type="Texture" id=18]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 5 )
+region = Rect2( 128, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 5 )
+region = Rect2( 256, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 128, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 5 )
+region = Rect2( 128, 128, 128, 128 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -10,7 +53,85 @@ anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 409, 70 )
 script = ExtResource( 4 )
 
+[node name="Node" type="Node" parent="."]
+
+[node name="Final Score" type="TextureRect" parent="Node"]
+margin_left = 275.0
+margin_top = -22.0
+margin_right = 531.0
+margin_bottom = 106.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="Game Cleared" type="TextureRect" parent="Node"]
+margin_left = 251.0
+margin_top = -102.0
+margin_right = 507.0
+margin_bottom = 26.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
+
+[node name="Made by" type="TextureRect" parent="Node"]
+margin_left = 341.0
+margin_top = 181.0
+margin_right = 597.0
+margin_bottom = 309.0
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 10 )
+
+[node name="David Byström" type="TextureRect" parent="Node"]
+margin_left = 316.0
+margin_top = 353.0
+margin_right = 572.0
+margin_bottom = 481.0
+texture = ExtResource( 11 )
+
+[node name="Art, Animation" type="TextureRect" parent="Node/David Byström"]
+margin_left = 155.0
+margin_top = 0.5
+margin_right = 411.0
+margin_bottom = 128.5
+texture = ExtResource( 16 )
+
+[node name="Pontus Göth" type="TextureRect" parent="Node"]
+margin_left = 312.0
+margin_top = 276.0
+margin_right = 568.0
+margin_bottom = 404.0
+texture = ExtResource( 7 )
+
+[node name="Programming, Design" type="TextureRect" parent="Node/Pontus Göth"]
+margin_left = 168.0
+margin_top = 1.00003
+margin_right = 424.0
+margin_bottom = 129.0
+texture = ExtResource( 17 )
+
+[node name="Towe Andersson" type="TextureRect" parent="Node"]
+margin_left = 327.0
+margin_top = 427.0
+margin_right = 583.0
+margin_bottom = 555.0
+texture = ExtResource( 9 )
+
+[node name="Music, Sound" type="TextureRect" parent="Node/Towe Andersson"]
+margin_left = 172.0
+margin_top = 3.00005
+margin_right = 428.0
+margin_bottom = 131.0
+texture = ExtResource( 15 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 115, 469 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 6 )
+frame = 1
+playing = true
+
+[node name="Title Background" parent="." instance=ExtResource( 3 )]
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_left = -37.0
 margin_top = -43.0
 margin_right = 299.0
@@ -19,6 +140,7 @@ rect_scale = Vector2( 4.56, 6.32 )
 color = Color( 0.129412, 0.129412, 0.137255, 1 )
 
 [node name="Label" type="Label" parent="."]
+visible = false
 margin_left = 418.0
 margin_top = 101.0
 margin_right = 491.0
@@ -28,6 +150,7 @@ text = "Final Score:"
 align = 2
 
 [node name="RichTextLabel3" type="Label" parent="."]
+visible = false
 margin_left = 752.0
 margin_top = 386.0
 margin_right = 1597.0
@@ -40,6 +163,7 @@ TOWE ANDERSSON
 "
 
 [node name="RichTextLabel2" type="Label" parent="."]
+visible = false
 modulate = Color( 1, 0.627451, 0.207843, 1 )
 margin_left = 96.0
 margin_top = 386.0
@@ -50,6 +174,7 @@ GAMEJAM
 "
 
 [node name="RichTextLabel" type="Label" parent="."]
+visible = false
 margin_left = 480.0
 margin_top = 60.0
 margin_right = 920.0
@@ -62,19 +187,27 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -398.0
-margin_top = -133.0
-margin_right = 424.0
-margin_bottom = 123.0
+margin_left = -170.0
+margin_top = -302.0
+margin_right = -41.9996
+margin_bottom = -174.0
+rect_scale = Vector2( 3, 3 )
 
-[node name="Return" type="Button" parent="MenuItems"]
-margin_right = 822.0
-margin_bottom = 20.0
-text = "RETURN TO START "
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Return" type="TextureButton" parent="MenuItems"]
+margin_right = 128.0
+margin_bottom = 128.0
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 12 )
+texture_focused = ExtResource( 12 )
+
+[node name="Return to Start" type="TextureRect" parent="MenuItems/Return"]
+margin_left = 11.3333
+margin_top = 41.3333
+margin_right = 267.333
+margin_bottom = 169.333
+rect_scale = Vector2( 0.389, 0.4 )
+texture = ExtResource( 14 )
 
 [node name="Buttonsound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
@@ -82,5 +215,10 @@ stream = ExtResource( 2 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 autoplay = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 958, 542 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 18 )
 
 [connection signal="pressed" from="MenuItems/Return" to="." method="_on_Return_pressed"]

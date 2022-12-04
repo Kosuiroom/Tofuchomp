@@ -1,13 +1,28 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Actors/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Audio/lazershoot.wav" type="AudioStream" id=2]
 
-[sub_resource type="StreamTexture" id=3]
+[sub_resource type="StreamTexture" id=7]
 load_path = "res://.import/Tofuchomp_Player.png-287947d1f82ff51f37d9aaea3918390e.stex"
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 12.2319, 18.3358 )
+
+[sub_resource type="Animation" id=8]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0.0, 1.0, 2.0, 3.0, 4.0 ]
+}
 
 [sub_resource type="Animation" id=4]
 length = 0.6
@@ -67,9 +82,10 @@ armor = 50000
 [node name="Sprite2" type="Sprite" parent="."]
 position = Vector2( 0.249997, 0.222763 )
 scale = Vector2( 2.37109, 2.11286 )
-texture = SubResource( 3 )
+texture = SubResource( 7 )
 hframes = 3
 vframes = 2
+frame = 3
 __meta__ = {
 "_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PUFuaW1hdGlvblBsYXllcgpzb3VyY2V8PUM6L1VzZXJzL0RhdmlkL09uZURyaXZlL0JpbGRlci9hcnQvQXNlc3ByaXRlL1Byb2plY3RzL1RvZnVjaG9tcC9Ub2Z1Y2hvbXBfUGxheWVyLmFzZXByaXRlCmxheWVyfD0Kb3BfZXhwfD1GYWxzZQpvX2ZvbGRlcnw9cmVzOi8vQXNzZXRzCm9fbmFtZXw9Cm9ubHlfdmlzaWJsZXw9RmFsc2UKb19leF9wfD0K"
 }
@@ -90,6 +106,7 @@ position = Vector2( -3, -44 )
 position = Vector2( 23, -44 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Dance = SubResource( 8 )
 anims/Idle = SubResource( 4 )
 anims/Turn_Left = SubResource( 5 )
 anims/Turn_Right = SubResource( 6 )
