@@ -1,7 +1,63 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/Spr_SKETCH_Mysterious_Vendor.png" type="Texture" id=1]
 [ext_resource path="res://Actors/Enemies/boss/boss.gd" type="Script" id=2]
+
+[sub_resource type="StreamTexture" id=2]
+load_path = "res://.import/Tofuchomp_Boss Head.png-57604fe7677f46c6cdcf3ba8a511bb5b.stex"
+
+[sub_resource type="Animation" id=3]
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="StreamTexture" id=4]
+load_path = "res://.import/Tofuchomp_Boss Pawn Left.png-c7bcae18afd6993134c65c0296fc9a8a.stex"
+
+[sub_resource type="Animation" id=5]
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="StreamTexture" id=6]
+load_path = "res://.import/Tofuchomp_Boss Pawn Right.png-d82e012d64dcd9f85e119f16efbed5d7.stex"
+
+[sub_resource type="Animation" id=7]
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0.0 ]
+}
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 87.5, 43.75 )
@@ -10,10 +66,42 @@ extents = Vector2( 87.5, 43.75 )
 position = Vector2( 0, -1 )
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
 position = Vector2( 75, -39 )
 scale = Vector2( 9.40625, 4.92188 )
-texture = ExtResource( 1 )
+
+[node name="Head" type="Sprite" parent="Node2D"]
+position = Vector2( -6.48505, -14.4254 )
+scale = Vector2( 0.609635, 1.18095 )
+texture = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PU5vZGUyRC9IZWFkL0hlYWRBbmltYXRpb25QbGF5ZXIKc291cmNlfD1DOi9Vc2Vycy9EYXZpZC9PbmVEcml2ZS9CaWxkZXIvYXJ0L0FzZXNwcml0ZS9Qcm9qZWN0cy9Ub2Z1Y2hvbXAvVG9mdWNob21wX0Jvc3MgSGVhZC5hc2Vwcml0ZQpsYXllcnw9Cm9wX2V4cHw9RmFsc2UKb19mb2xkZXJ8PXJlczovL0Fzc2V0cwpvX25hbWV8PQpvbmx5X3Zpc2libGV8PUZhbHNlCm9fZXhfcHw9Cg=="
+}
+
+[node name="HeadAnimationPlayer" type="AnimationPlayer" parent="Node2D/Head"]
+anims/default = SubResource( 3 )
+
+[node name="PawnLeft" type="Sprite" parent="Node2D"]
+position = Vector2( -76.5449, 5.07936 )
+scale = Vector2( 0.499618, 0.822968 )
+texture = SubResource( 4 )
+__meta__ = {
+"_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PU5vZGUyRC9IZWFkL1Bhd25MZWZ0L1Bhd25MZWZ0QW5pbWF0aW9uUGxheWVyCnNvdXJjZXw9QzovVXNlcnMvRGF2aWQvT25lRHJpdmUvQmlsZGVyL2FydC9Bc2VzcHJpdGUvUHJvamVjdHMvVG9mdWNob21wL1RvZnVjaG9tcF9Cb3NzIFBhd24gTGVmdC5hc2Vwcml0ZQpsYXllcnw9Cm9wX2V4cHw9RmFsc2UKb19mb2xkZXJ8PXJlczovL0Fzc2V0cwpvX25hbWV8PQpvbmx5X3Zpc2libGV8PUZhbHNlCm9fZXhfcHw9Cg=="
+}
+
+[node name="PawnLeftAnimationPlayer" type="AnimationPlayer" parent="Node2D/PawnLeft"]
+anims/default = SubResource( 5 )
+
+[node name="PawnRight" type="Sprite" parent="Node2D"]
+position = Vector2( 64.6379, 9.95554 )
+scale = Vector2( 0.496878, 0.818455 )
+texture = SubResource( 6 )
+__meta__ = {
+"_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PU5vZGUyRC9IZWFkL1Bhd25SaWdodC9BbmltYXRpb25QbGF5ZXIKc291cmNlfD1DOi9Vc2Vycy9EYXZpZC9PbmVEcml2ZS9CaWxkZXIvYXJ0L0FzZXNwcml0ZS9Qcm9qZWN0cy9Ub2Z1Y2hvbXAvVG9mdWNob21wX0Jvc3MgUGF3biBSaWdodC5hc2Vwcml0ZQpsYXllcnw9Cm9wX2V4cHw9RmFsc2UKb19mb2xkZXJ8PXJlczovL0Fzc2V0cwpvX25hbWV8PQpvbmx5X3Zpc2libGV8PUZhbHNlCm9fZXhfcHw9Cg=="
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/PawnRight"]
+anims/default = SubResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1 )
