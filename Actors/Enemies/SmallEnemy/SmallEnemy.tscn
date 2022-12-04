@@ -23,7 +23,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 11.5, 12.5 )
+extents = Vector2( 10, 23.25 )
 
 [node name="smallenemy" groups=["smallenemy"] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -40,7 +40,10 @@ __meta__ = {
 anims/default = SubResource( 3 )
 
 [node name="hitbox" parent="." index="1"]
-position = Vector2( -2.5, 2.5 )
+position = Vector2( -1, 8.75 )
 shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" parent="." index="2"]
+position = Vector2( -1, 0 )
 
 [connection signal="body_entered" from="." to="." method="_on_smallenemy_body_entered"]

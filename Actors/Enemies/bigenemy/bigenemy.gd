@@ -26,5 +26,6 @@ func shot():
 		yield(get_tree().create_timer(1.25), "timeout")
 
 func _on_bigenemy_body_entered(body):
+	print("player hit big enemy")
 	if body.is_in_group("player"):
 		body.armor -= 1

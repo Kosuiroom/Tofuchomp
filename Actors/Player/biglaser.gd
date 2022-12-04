@@ -6,11 +6,12 @@ var speed = 300
 func _process(delta):
 	translate(direction.normalized() * speed * delta)
 
-func _on_VisibilityNotifier2D_viewport_exited(_viewport):
-		queue_free()
+func _on_enemybiglaser_body_entered(body):
+	if body.is_in_group("player"):
+		if body.armor == 0:
+			body.armor -= Global.dmg
+			queue_free()
 
 
-func _on_biglaser_area_entered(area):
-	if area.is_in_group("enemy"):
-		area.armor -= Global.dmg
-		queue_free()
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()

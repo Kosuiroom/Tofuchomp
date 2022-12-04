@@ -7,19 +7,55 @@
 extents = Vector2( 87.5, 43.75 )
 
 [node name="boss" type="Area2D"]
-position = Vector2( -3, 1 )
+position = Vector2( 0, -1 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 71, -39 )
+position = Vector2( 75, -39 )
 scale = Vector2( 9.40625, 4.92188 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1 )
 shape = SubResource( 1 )
 
-[node name="left" type="Position2D" parent="."]
+[node name="leftgun" type="Node2D" parent="."]
+position = Vector2( -69, 60 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="middle" type="Position2D" parent="."]
+[node name="leftleft" type="Position2D" parent="leftgun"]
+position = Vector2( 21, 13 )
 
-[node name="right" type="Position2D" parent="."]
+[node name="leftmiddle" type="Position2D" parent="leftgun"]
+position = Vector2( -5, 17 )
+
+[node name="leftright" type="Position2D" parent="leftgun"]
+position = Vector2( -38, 13 )
+
+[node name="rightgun" type="Node2D" parent="."]
+position = Vector2( 76, 62 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="rightleft" type="Position2D" parent="rightgun"]
+position = Vector2( -29, 13 )
+
+[node name="rightmiddle" type="Position2D" parent="rightgun"]
+position = Vector2( 25, 16 )
+
+[node name="rightright" type="Position2D" parent="rightgun"]
+position = Vector2( -1, 17 )
+
+[node name="middlegun" type="Node2D" parent="."]
+position = Vector2( 1, 63 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="middlemiddle" type="Position2D" parent="middlegun"]
+position = Vector2( 0, 11 )
+
+[connection signal="body_entered" from="." to="." method="_on_boss_body_entered"]
