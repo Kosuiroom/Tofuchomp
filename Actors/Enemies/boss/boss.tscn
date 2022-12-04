@@ -20,34 +20,28 @@ position = Vector2( 0, 1 )
 shape = SubResource( 1 )
 
 [node name="leftgun" type="Node2D" parent="."]
-position = Vector2( -69, 60 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( -132, 46 )
 
 [node name="leftleft" type="Position2D" parent="leftgun"]
-position = Vector2( 21, 13 )
+position = Vector2( 21, 17 )
 
 [node name="leftmiddle" type="Position2D" parent="leftgun"]
-position = Vector2( -5, 17 )
+position = Vector2( 3, 37 )
 
 [node name="leftright" type="Position2D" parent="leftgun"]
-position = Vector2( -38, 13 )
+position = Vector2( -13, 52 )
 
 [node name="rightgun" type="Node2D" parent="."]
-position = Vector2( 76, 62 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( 152, 63 )
 
 [node name="rightleft" type="Position2D" parent="rightgun"]
-position = Vector2( -29, 13 )
+position = Vector2( -38, -6 )
 
 [node name="rightmiddle" type="Position2D" parent="rightgun"]
-position = Vector2( 25, 16 )
+position = Vector2( -7.99998, 21 )
 
 [node name="rightright" type="Position2D" parent="rightgun"]
-position = Vector2( -1, 17 )
+position = Vector2( -23, 7 )
 
 [node name="middlegun" type="Node2D" parent="."]
 position = Vector2( 1, 63 )

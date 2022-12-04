@@ -21,6 +21,7 @@ onready var rr_gun = $rightgun/rightright
 
 var e_laser = preload("res://Actors/Enemies/enemylaser.tscn")
 var b_laser = preload("res://Actors/Enemies/enemybiglaser.tscn")
+
 export var mvspeed = 20
 var elapsed: float
 
@@ -60,33 +61,33 @@ func shotmiddle():
 		
 func shotleft():
 		var Lbullet = e_laser.instance()
-		Lbullet.direction = ll_gun.global_position - global_position
+		Lbullet.direction = Vector2(111,40)
 		Lbullet.global_position = ll_gun.global_position
 		get_tree().get_root().add_child(Lbullet)
 				
 		var Mbullet = e_laser.instance()
-		Mbullet.direction = lm_gun.global_position - global_position
+		Mbullet.direction = Vector2(111,40)
 		Mbullet.global_position = lm_gun.global_position
 		get_tree().get_root().add_child(Mbullet)
 				
 		var Rbullet = e_laser.instance()
-		Rbullet.direction = lr_gun.global_position - global_position
+		Rbullet.direction = Vector2(111,40)
 		Rbullet.global_position = lr_gun.global_position
 		get_tree().get_root().add_child(Rbullet)
 		
 func shotright():
 		var Lbullet = e_laser.instance()
-		Lbullet.direction = rl_gun.global_position - global_position
+		Lbullet.direction = Vector2(-111,40)
 		Lbullet.global_position = rl_gun.global_position
 		get_tree().get_root().add_child(Lbullet)
 				
 		var Mbullet = e_laser.instance()
-		Mbullet.direction = rm_gun.global_position - global_position
+		Mbullet.direction = Vector2(-111,40)
 		Mbullet.global_position = rm_gun.global_position
 		get_tree().get_root().add_child(Mbullet)
 				
 		var Rbullet = e_laser.instance()
-		Rbullet.direction = rr_gun.global_position - global_position
+		Rbullet.direction = Vector2(-111,40)
 		Rbullet.global_position = rr_gun.global_position
 		get_tree().get_root().add_child(Rbullet)
 		
