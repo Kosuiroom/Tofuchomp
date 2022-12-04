@@ -1,9 +1,27 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Actors/Enemies/enemylaser.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Spr_Mushquito.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="StreamTexture" id=2]
+load_path = "res://.import/Tofuchomp_Enemy Laser Projectile.png-22a9b205a79d343cc479c5c1bb69de48.stex"
+
+[sub_resource type="Animation" id=3]
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0.0 ]
+}
 
 [node name="enemylaser" type="Area2D"]
 script = ExtResource( 1 )
@@ -12,7 +30,13 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+texture = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PVNwcml0ZS9BbmltYXRpb25QbGF5ZXIKc291cmNlfD1DOi9Vc2Vycy9EYXZpZC9PbmVEcml2ZS9CaWxkZXIvYXJ0L0FzZXNwcml0ZS9Qcm9qZWN0cy9Ub2Z1Y2hvbXAvVG9mdWNob21wX0VuZW15IExhc2VyIFByb2plY3RpbGUuYXNlcHJpdGUKbGF5ZXJ8PQpvcF9leHB8PUZhbHNlCm9fZm9sZGVyfD1yZXM6Ly9Bc3NldHMKb19uYW1lfD0Kb25seV92aXNpYmxlfD1GYWxzZQpvX2V4X3B8PQo="
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/default = SubResource( 3 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 

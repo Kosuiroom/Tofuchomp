@@ -1,9 +1,27 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Actors/Enemies/enemybiglaser.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Spr_Mushquito.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="StreamTexture" id=2]
+load_path = "res://.import/Tofuchomp_Boss Laser Projectile.png-3f7600be31b988ce59d79caa2f7d827f.stex"
+
+[sub_resource type="Animation" id=3]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0.0, 1.0, 2.0, 3.0 ]
+}
 
 [node name="enemybiglaser" type="Area2D"]
 position = Vector2( 0, 1 )
@@ -15,7 +33,15 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 4.54747e-13, 0 )
 scale = Vector2( 2.77344, 3.53125 )
-texture = ExtResource( 2 )
+texture = SubResource( 2 )
+hframes = 2
+vframes = 2
+__meta__ = {
+"_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PVNwcml0ZS9BbmltYXRpb25QbGF5ZXIKc291cmNlfD1DOi9Vc2Vycy9EYXZpZC9PbmVEcml2ZS9CaWxkZXIvYXJ0L0FzZXNwcml0ZS9Qcm9qZWN0cy9Ub2Z1Y2hvbXAvVG9mdWNob21wX0Jvc3MgTGFzZXIgUHJvamVjdGlsZS5hc2Vwcml0ZQpsYXllcnw9Cm9wX2V4cHw9RmFsc2UKb19mb2xkZXJ8PXJlczovL0Fzc2V0cwpvX25hbWV8PQpvbmx5X3Zpc2libGV8PUZhbHNlCm9fZXhfcHw9Cg=="
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/Attack = SubResource( 3 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
