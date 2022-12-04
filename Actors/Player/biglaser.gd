@@ -14,14 +14,14 @@ func _on_biglaser_area_entered(area):
 		area.armor -= Global.dmg
 		if area.armor == 0:
 			Global.score += 100
-			queue_free()
+		queue_free()
 	elif area.is_in_group("bigenemy"):
 		area.armor -= Global.dmg
 		if area.armor == 0:
 			Global.score += 300
-			queue_free()
+		queue_free()
 	elif area.is_in_group("boss"):
 		area.armor -= Global.dmg
 		if area.armor == 0:
 			Global.score += 5000
-			queue_free()
+		queue_free()
