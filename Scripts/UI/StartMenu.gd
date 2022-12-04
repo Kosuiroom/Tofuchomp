@@ -1,21 +1,23 @@
 extends Control
 
-onready var startbtn = $MenuItems/Start
+onready var startbtn = $MenuItems/StartBar
 onready var Buttonsound = $Buttonsound
 
 func _ready():
 	startbtn.grab_focus()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
-func _on_Start_pressed():
+func _on_StartBar_pressed():
 	Global.score = 0
 	get_tree().change_scene("res://GameScene/Level01.tscn")
-
-func _on_Exit_pressed():
+	
+func _on_ExitBar_pressed():
 	get_tree().quit()
 
-func _on_Start_focus_exited():
+
+func _on_StartBar_focus_exited():
 	Buttonsound.play()
 
-func _on_Exit_focus_exited():
+
+func _on_ExitBar_focus_exited():
 	Buttonsound.play()
