@@ -6,6 +6,7 @@ export var armor = 1 setget set_armor
 var velocity := Vector2()
 var e_laser = preload("res://Actors/Player/Laser.tscn")
 var e_biglaser = preload("res://Actors/Player/biglaser.tscn")
+onready var lasersound = $lasersound
 var spread := false
 var biglaser:= false
 
@@ -20,6 +21,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide(speed * direction)
 	
 	if Input.is_action_just_pressed("shoot"):
+		lasersound.play()
 		fire()
 
 func fire():
