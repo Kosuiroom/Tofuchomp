@@ -24,6 +24,7 @@ var b_laser = preload("res://Actors/Enemies/enemybiglaser.tscn")
 
 export var mvspeed = 20
 var elapsed: float
+export var shotcount = 10
 
 var spread := true
 	
@@ -46,11 +47,20 @@ func set_armor(value):
 		queue_free()
 
 func shot():
+	
+	print("shotcount", shotcount)
+	
+	if shotcount <= 0:
+		spread = false
+		
 	if spread:	
 		shotleft()
 		shotright()
+		shotcount -= 1
 	else:
 		shotmiddle()
+		spread = true
+		shotcount = 10
 		
 func shotmiddle():
 		print("Shooting middle")
