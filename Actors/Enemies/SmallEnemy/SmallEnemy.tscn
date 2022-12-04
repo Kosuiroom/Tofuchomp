@@ -22,7 +22,7 @@ tracks/0/keys = {
 "values": [ 1.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:frame")
+tracks/1/path = NodePath("Sprite1:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/imported = false
@@ -50,7 +50,7 @@ tracks/0/keys = {
 "values": [ 2.0, 3.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:frame")
+tracks/1/path = NodePath("Sprite1:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/imported = false
@@ -78,7 +78,7 @@ tracks/0/keys = {
 "values": [ 0.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:frame")
+tracks/1/path = NodePath("Sprite1:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/imported = false
@@ -98,10 +98,11 @@ script = ExtResource( 2 )
 velocity = Vector2( 0, 50 )
 armor = 1
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="Sprite1" type="Sprite" parent="." index="0"]
 texture = SubResource( 6 )
 hframes = 2
 vframes = 2
+frame = 1
 __meta__ = {
 "_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PVNwcml0ZUBBbmltYXRpb25QbGF5ZXIKc291cmNlfD1DOi9Vc2Vycy9EYXZpZC9PbmVEcml2ZS9CaWxkZXIvYXJ0L0FzZXNwcml0ZS9Qcm9qZWN0cy9Ub2Z1Y2hvbXAvVG9mdWNob21wX0VuZW15X0JyZWFkIENhdC5hc2Vwcml0ZQpsYXllcnw9Cm9wX2V4cHw9VHJ1ZQpvX2ZvbGRlcnw9cmVzOi8vQXNzZXRzCm9fbmFtZXw9Cm9ubHlfdmlzaWJsZXw9RmFsc2UKb19leF9wfD0K"
 }
