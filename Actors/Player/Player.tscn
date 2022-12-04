@@ -6,7 +6,7 @@
 load_path = "res://.import/Tofuchomp_Player.png-287947d1f82ff51f37d9aaea3918390e.stex"
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 16.5131, 22.003 )
+extents = Vector2( 12.2319, 18.3358 )
 
 [sub_resource type="Animation" id=4]
 length = 0.2
@@ -45,6 +45,7 @@ position = Vector2( 0, 1 )
 collision_mask = 14
 script = ExtResource( 1 )
 speed = 400
+armor = 50000
 
 [node name="Sprite2" type="Sprite" parent="."]
 position = Vector2( 0.249997, 0.222763 )
@@ -55,7 +56,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.250015, 1.00001 )
+position = Vector2( -1, 3 )
 rotation = -3.14159
 scale = Vector2( 1.2263, -1.09076 )
 shape = SubResource( 2 )

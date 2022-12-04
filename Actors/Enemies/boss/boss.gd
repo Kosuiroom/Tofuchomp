@@ -34,7 +34,6 @@ func _process(delta):
 	if position == Vector2(500,70):
 		invinc(false)
 		elapsed += delta
-
 		if elapsed > 1.25:
 			shot()
 			elapsed = 0
@@ -44,12 +43,14 @@ func _process(delta):
 func set_armor(value):
 	armor = value
 	if armor <= 0:
-		queue_free()
+		is_killed()
+		
+func is_killed():
+	sprite.visible = false
+	yield(get_tree().create_timer(2), "timeout")
+	get_tree().change_scene("res://UI/Endgame.tscn")
 
 func shot():
-	
-	print("shotcount", shotcount)
-	
 	if shotcount <= 0:
 		spread = false
 		
@@ -63,7 +64,6 @@ func shot():
 		shotcount = 10
 		
 func shotmiddle():
-		print("Shooting middle")
 		var mlbullet = b_laser.instance()
 		mlbullet.direction = mm_gun.global_position - global_position
 		mlbullet.global_position = mm_gun.global_position

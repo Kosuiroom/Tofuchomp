@@ -34,6 +34,7 @@ func _on_respawntimer_timeout():
 
 func _on_bossspawntimer_timeout():
 	remove_child(spawner)
+	remove_child(pup)
 	var e = boss.instance()
 	add_child(e)
 	e.position = Vector2(500,-70)
