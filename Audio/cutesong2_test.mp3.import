@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cutesong2_test.mp3-d026bf5b4708120b8024e88f5036f8cd.mp3str"
+
+[deps]
+
+source_file="res://Audio/cutesong2_test.mp3"
+dest_files=[ "res://.import/cutesong2_test.mp3-d026bf5b4708120b8024e88f5036f8cd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

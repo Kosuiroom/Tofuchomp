@@ -7,7 +7,7 @@ onready var finalscore = $Label
 func _ready():
 	startbtn.grab_focus()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-#	finalscore.text = "Final Score: " + Global.score
+	finalscore.text = "Final Score: " + str(Global.score)
 	
 func _on_Return_pressed():
 #	Buttonsound.play()

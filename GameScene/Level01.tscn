@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Actors/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GameScene/background.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Actors/powerups/spread.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Audio/cute_game_1_extended.wav" type="AudioStream" id=3]
 [ext_resource path="res://GameScene/Level01.gd" type="Script" id=4]
-[ext_resource path="res://Actors/powerups/biglaser.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/pausescene/pausescreen.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/score/score.tscn" type="PackedScene" id=7]
 
@@ -55,22 +54,25 @@ shape = SubResource( 3 )
 position = Vector2( 505, -2 )
 shape = SubResource( 3 )
 
-[node name="spread" parent="." instance=ExtResource( 3 )]
-position = Vector2( 485, 362 )
-
-[node name="biglaser" parent="." instance=ExtResource( 5 )]
-position = Vector2( 694, 386 )
-
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 500, 504 )
+position = Vector2( 512, 531 )
 
 [node name="respawntimer" type="Timer" parent="."]
 autostart = true
 
 [node name="bossspawntimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 30.0
 one_shot = true
 autostart = true
 
+[node name="powerupspawner" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
 [connection signal="timeout" from="respawntimer" to="." method="_on_respawntimer_timeout"]
 [connection signal="timeout" from="bossspawntimer" to="." method="_on_bossspawntimer_timeout"]
+[connection signal="timeout" from="powerupspawner" to="." method="_on_powerupspawner_timeout"]

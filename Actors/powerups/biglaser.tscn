@@ -8,6 +8,8 @@ extents = Vector2( 42, 9.5 )
 
 [node name="biglaser" type="Area2D"]
 script = ExtResource( 1 )
+velocity = Vector2( 0, 50 )
+speed = 200
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -22, 54.5 )
@@ -18,4 +20,7 @@ position = Vector2( -22, 45 )
 scale = Vector2( 0.65625, 0.296875 )
 texture = ExtResource( 2 )
 
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_biglaser_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

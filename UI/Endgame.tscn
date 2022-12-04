@@ -17,10 +17,10 @@ rect_scale = Vector2( 4.56, 6.32 )
 color = Color( 0.129412, 0.129412, 0.137255, 1 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 511.0
-margin_top = 134.0
-margin_right = 570.0
-margin_bottom = 165.0
+margin_left = 418.0
+margin_top = 101.0
+margin_right = 491.0
+margin_bottom = 132.0
 rect_scale = Vector2( 3, 3 )
 text = "Final Score:"
 align = 2
@@ -48,10 +48,10 @@ GAMEJAM
 "
 
 [node name="RichTextLabel" type="Label" parent="."]
-margin_left = 444.0
-margin_top = 59.0
-margin_right = 884.0
-margin_bottom = 123.0
+margin_left = 480.0
+margin_top = 60.0
+margin_right = 920.0
+margin_bottom = 124.0
 text = "GAME CLEARED"
 
 [node name="MenuItems" type="VBoxContainer" parent="."]

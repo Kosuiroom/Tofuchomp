@@ -48,12 +48,12 @@ position = Vector2( -1, 1 )
 shape = SubResource( 1 )
 
 [node name="middle" type="Position2D" parent="." index="2"]
-position = Vector2( 0, 15 )
+position = Vector2( 0, 19 )
 
 [node name="left" type="Position2D" parent="." index="3"]
-position = Vector2( -11, 14 )
+position = Vector2( -18, 19 )
 
 [node name="right" type="Position2D" parent="." index="4"]
-position = Vector2( 10, 14 )
+position = Vector2( 18, 19 )
 
 [connection signal="body_entered" from="." to="." method="_on_bigenemy_body_entered"]
