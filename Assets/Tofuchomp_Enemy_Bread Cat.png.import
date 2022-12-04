@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ice Ceal.png-89f5e416fb51b576c517116cfe594836.stex"
+path="res://.import/Tofuchomp_Enemy_Bread Cat.png-7cd0531da1c04a157a8231d17c3f14a3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Ice Ceal.png"
-dest_files=[ "res://.import/Ice Ceal.png-89f5e416fb51b576c517116cfe594836.stex" ]
+source_file="res://Assets/Tofuchomp_Enemy_Bread Cat.png"
+dest_files=[ "res://.import/Tofuchomp_Enemy_Bread Cat.png-7cd0531da1c04a157a8231d17c3f14a3.stex" ]
 
 [params]
 
