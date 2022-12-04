@@ -120,7 +120,6 @@ position = Vector2( -358, -10 )
 stream = ExtResource( 2 )
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
-layer = 0
 script = ExtResource( 8 )
 scrollspeed = 200.0
 
