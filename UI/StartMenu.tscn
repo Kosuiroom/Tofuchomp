@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/UI/StartMenu.gd" type="Script" id=1]
 [ext_resource path="res://Audio/flash_attack_2.mp3" type="AudioStream" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Assets/Tofuchomp_Cloud3_Noshadow.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Tofuchomp_Cloud2_Noshadow.png" type="Texture" id=13]
 [ext_resource path="res://UI/BackgroundX.gd" type="Script" id=14]
+[ext_resource path="res://UI/Control Desc.tscn" type="PackedScene" id=15]
 
 [node name="StartMenu" type="Control"]
 margin_left = 301.0
@@ -130,6 +131,9 @@ motion_mirroring = Vector2( 0, 768 )
 position = Vector2( 775, 21 )
 rotation = -3.14159
 scale = Vector2( 3, 3 )
+
+[node name="Control Desc" parent="." instance=ExtResource( 15 )]
+position = Vector2( -184, 158 )
 
 [connection signal="focus_exited" from="MenuItems/StartBar" to="." method="_on_StartBar_focus_exited"]
 [connection signal="pressed" from="MenuItems/StartBar" to="." method="_on_StartBar_pressed"]
