@@ -1,13 +1,13 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Audio/angry-cat-meow-82091.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Actors/Enemies/boss/boss.gd" type="Script" id=2]
 [ext_resource path="res://Audio/lazershoot.wav" type="AudioStream" id=3]
 
-[sub_resource type="StreamTexture" id=2]
+[sub_resource type="StreamTexture" id=8]
 load_path = "res://.import/Tofuchomp_Boss Head.png-57604fe7677f46c6cdcf3ba8a511bb5b.stex"
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=9]
 length = 0.1
 loop = true
 tracks/0/type = "value"
@@ -21,6 +21,22 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1.0 ]
 }
 
 [sub_resource type="StreamTexture" id=4]
@@ -79,13 +95,15 @@ __meta__ = {
 [node name="Head" type="Sprite" parent="Body"]
 position = Vector2( -6.48505, -14.4254 )
 scale = Vector2( 0.609635, 1.18095 )
-texture = SubResource( 2 )
+texture = SubResource( 8 )
+hframes = 2
 __meta__ = {
-"_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PU5vZGUyRC9IZWFkL0hlYWRBbmltYXRpb25QbGF5ZXIKc291cmNlfD1DOi9Vc2Vycy9EYXZpZC9PbmVEcml2ZS9CaWxkZXIvYXJ0L0FzZXNwcml0ZS9Qcm9qZWN0cy9Ub2Z1Y2hvbXAvVG9mdWNob21wX0Jvc3MgSGVhZC5hc2Vwcml0ZQpsYXllcnw9Cm9wX2V4cHw9RmFsc2UKb19mb2xkZXJ8PXJlczovL0Fzc2V0cwpvX25hbWV8PQpvbmx5X3Zpc2libGV8PUZhbHNlCm9fZXhfcHw9Cg=="
+"_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PUJvZHkvSGVhZC9IZWFkQW5pbWF0aW9uUGxheWVyCnNvdXJjZXw9QzovVXNlcnMvRGF2aWQvT25lRHJpdmUvQmlsZGVyL2FydC9Bc2VzcHJpdGUvUHJvamVjdHMvVG9mdWNob21wL1RvZnVjaG9tcF9Cb3NzIEhlYWQuYXNlcHJpdGUKbGF5ZXJ8PQpvcF9leHB8PVRydWUKb19mb2xkZXJ8PXJlczovL0Fzc2V0cwpvX25hbWV8PQpvbmx5X3Zpc2libGV8PUZhbHNlCm9fZXhfcHw9Cg=="
 }
 
 [node name="HeadAnimationPlayer" type="AnimationPlayer" parent="Body/Head"]
-anims/default = SubResource( 3 )
+anims/Idle = SubResource( 9 )
+anims/Mouth = SubResource( 10 )
 
 [node name="PawnLeft" type="Sprite" parent="Body"]
 position = Vector2( -76.5449, 5.07936 )
