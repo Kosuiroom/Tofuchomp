@@ -60,6 +60,7 @@ extents = Vector2( 24, 17 )
 
 [node name="bigenemy" groups=["bigenemy"] instance=ExtResource( 1 )]
 position = Vector2( 304, 26 )
+scale = Vector2( 2, 2 )
 script = ExtResource( 3 )
 velocity = Vector2( 0, 50 )
 speed = 200

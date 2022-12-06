@@ -8,7 +8,8 @@ var e_laser = preload("res://Actors/Player/Laser.tscn")
 var e_biglaser = preload("res://Actors/Player/biglaser.tscn")
 onready var Anime = $AnimationPlayer
 onready var lasersound = $lasersound
-var spread := false
+onready var barkingsound = $Barkingsound
+var spread = false
 var biglaser:= false
 
 func _physics_process(_delta: float) -> void:
@@ -22,6 +23,7 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("move_left"):
 		Anime.play("Turn_Left")
 		
+	
 	if direction == Vector2(0,0):
 		Anime.play("Idle")
 
@@ -32,6 +34,8 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("shoot"):
 		lasersound.play()
 		fire()
+	if Input.is_action_just_pressed("Bark"):
+		barkingsound.play()
 
 func fire():
 	if spread:

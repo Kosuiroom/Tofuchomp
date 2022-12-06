@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Actors/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Audio/lazershoot.wav" type="AudioStream" id=2]
+[ext_resource path="res://Audio/SFX/barkingsound.wav" type="AudioStream" id=3]
 
 [sub_resource type="StreamTexture" id=7]
 load_path = "res://.import/Tofuchomp_Player.png-287947d1f82ff51f37d9aaea3918390e.stex"
@@ -110,6 +111,11 @@ anims/Dance = SubResource( 8 )
 anims/Idle = SubResource( 4 )
 anims/Turn_Left = SubResource( 5 )
 anims/Turn_Right = SubResource( 6 )
+
+[node name="Barkingsound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 0, -1 )
+stream = ExtResource( 3 )
+volume_db = 15.928
 
 [node name="lasersound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )

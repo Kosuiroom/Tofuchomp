@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/UI/StartMenu.gd" type="Script" id=1]
-[ext_resource path="res://Audio/flash_attack_2.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Audio/ButtonSound.wav" type="AudioStream" id=2]
 [ext_resource path="res://Assets/Tofuchomp_UI Bar Selected.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Tofuchomp_UI Bar Unselected.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Tofuchomp_UI Start.png" type="Texture" id=5]
@@ -90,7 +90,6 @@ margin_bottom = 128.0
 action_mode = 0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 4 )
-texture_hover = ExtResource( 3 )
 texture_focused = ExtResource( 3 )
 
 [node name="TextureRect" type="TextureRect" parent="MenuItems/StartBar"]
@@ -106,7 +105,6 @@ margin_bottom = 260.0
 action_mode = 0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 4 )
-texture_hover = ExtResource( 3 )
 texture_focused = ExtResource( 3 )
 
 [node name="TextureRect2" type="TextureRect" parent="MenuItems/ExitBar"]
@@ -133,7 +131,7 @@ rotation = -3.14159
 scale = Vector2( 3, 3 )
 
 [node name="Control Desc" parent="." instance=ExtResource( 15 )]
-position = Vector2( -184, 158 )
+position = Vector2( -164, 159 )
 
 [connection signal="focus_exited" from="MenuItems/StartBar" to="." method="_on_StartBar_focus_exited"]
 [connection signal="pressed" from="MenuItems/StartBar" to="." method="_on_StartBar_pressed"]
