@@ -74,6 +74,17 @@ autostart = true
 stream = ExtResource( 3 )
 autoplay = true
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2( -213, 56 )
+z_index = 1
+amount = 800
+lifetime = 6.0
+preprocess = 37.0
+explosiveness = 0.05
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 123.92
+
 [connection signal="timeout" from="respawntimer" to="." method="_on_respawntimer_timeout"]
 [connection signal="timeout" from="bossspawntimer" to="." method="_on_bossspawntimer_timeout"]
 [connection signal="timeout" from="powerupspawner" to="." method="_on_powerupspawner_timeout"]
