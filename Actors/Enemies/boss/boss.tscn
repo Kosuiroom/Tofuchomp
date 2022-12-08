@@ -8,7 +8,7 @@
 load_path = "res://.import/Tofuchomp_Boss Head.png-57604fe7677f46c6cdcf3ba8a511bb5b.stex"
 
 [sub_resource type="Animation" id=9]
-length = 0.1
+length = 0.5
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -25,7 +25,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=10]
 length = 0.1
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -43,7 +42,7 @@ tracks/0/keys = {
 load_path = "res://.import/Tofuchomp_Boss Pawn Left.png-c7bcae18afd6993134c65c0296fc9a8a.stex"
 
 [sub_resource type="Animation" id=5]
-length = 0.1
+length = 0.5
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -162,7 +161,7 @@ position = Vector2( -7.99998, 21 )
 position = Vector2( -23, 7 )
 
 [node name="middlegun" type="Node2D" parent="."]
-position = Vector2( 118, 58 )
+position = Vector2( 112, 40 )
 __meta__ = {
 "_edit_group_": true
 }

@@ -8,6 +8,9 @@ onready var ll_gun = $leftgun/leftleft
 onready var lm_gun = $leftgun/leftmiddle
 onready var lr_gun = $leftgun/leftright
 onready var colshape = $CollisionShape2D
+onready var headanime = $Body/Head/HeadAnimationPlayer
+onready var lpawanime = $Body/PawnLeft/PawnLeftAnimationPlayer
+onready var rpawanime = $Body/PawnRight/AnimationPlayer
 var is_invinc = false
 
 ##middlegun
@@ -70,15 +73,18 @@ func shot(val):
 		shotmiddle()
 		spread = true
 		shotcount = 10
+		headanime.play("Idle")
 		
 func shotmiddle():
+		headanime.play("Mouth")
 		var mlbullet = b_laser.instance()
-		var mshotdir = player.global_position
-		mlbullet.direction = mshotdir - global_position
-		mlbullet.global_position = mm_gun.global_position
+		mlbullet.direction = $middlegun/middlemiddle.global_position - global_position
+		mlbullet.global_position = $middlegun/middlemiddle.global_position
 		get_tree().get_root().add_child(mlbullet)
+		headanime.play("Idle")
 		
 func shotleft():
+		lpawanime.play("default")
 		var Lbullet = e_laser.instance()
 		var lshotdir = player.global_position
 		Lbullet.direction = lshotdir - global_position
@@ -96,6 +102,7 @@ func shotleft():
 		get_tree().get_root().add_child(Rbullet)
 		
 func shotright():
+		rpawanime.play("default")
 		var rshotdir = player.global_position
 		var Lbullet = e_laser.instance()
 		Lbullet.direction = rshotdir - global_position

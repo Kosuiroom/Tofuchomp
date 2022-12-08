@@ -2,8 +2,10 @@ extends Area2D
 
 var direction := Vector2.DOWN;
 var speed = 400
+onready var anim = $Sprite/AnimationPlayer
 
 func _process(delta):
+	anim.play("default")
 	translate(direction.normalized() * speed * delta)
 
 func _on_VisibilityNotifier2D_screen_exited():
