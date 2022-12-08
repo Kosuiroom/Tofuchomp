@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cute_game_intro.mp3-1baadcee7116a0eeb0e356ddbd06fc5d.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/cute_game_intro.mp3"
+dest_files=[ "res://.import/cute_game_intro.mp3-1baadcee7116a0eeb0e356ddbd06fc5d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -84,7 +84,7 @@ position = Vector2( 0, -1 )
 script = ExtResource( 2 )
 
 [node name="Body" type="Node2D" parent="."]
-position = Vector2( 75, -39 )
+position = Vector2( 75, -53 )
 rotation = -3.14159
 scale = Vector2( 4.8206, 4.01391 )
 __meta__ = {
@@ -93,7 +93,7 @@ __meta__ = {
 
 [node name="Head" type="Sprite" parent="Body"]
 position = Vector2( -6.48505, -14.4254 )
-scale = Vector2( 0.609635, 1.18095 )
+scale = Vector2( 0.8, 0.8 )
 texture = SubResource( 8 )
 hframes = 2
 __meta__ = {
@@ -106,7 +106,7 @@ anims/Mouth = SubResource( 10 )
 
 [node name="PawnLeft" type="Sprite" parent="Body"]
 position = Vector2( -76.5449, 5.07936 )
-scale = Vector2( 0.499618, 0.822968 )
+scale = Vector2( 0.5, 0.5 )
 texture = SubResource( 4 )
 __meta__ = {
 "_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PU5vZGUyRC9IZWFkL1Bhd25MZWZ0L1Bhd25MZWZ0QW5pbWF0aW9uUGxheWVyCnNvdXJjZXw9QzovVXNlcnMvRGF2aWQvT25lRHJpdmUvQmlsZGVyL2FydC9Bc2VzcHJpdGUvUHJvamVjdHMvVG9mdWNob21wL1RvZnVjaG9tcF9Cb3NzIFBhd24gTGVmdC5hc2Vwcml0ZQpsYXllcnw9Cm9wX2V4cHw9RmFsc2UKb19mb2xkZXJ8PXJlczovL0Fzc2V0cwpvX25hbWV8PQpvbmx5X3Zpc2libGV8PUZhbHNlCm9fZXhfcHw9Cg=="
@@ -116,8 +116,8 @@ __meta__ = {
 anims/default = SubResource( 5 )
 
 [node name="PawnRight" type="Sprite" parent="Body"]
-position = Vector2( 64.6379, 9.95554 )
-scale = Vector2( 0.496878, 0.818455 )
+position = Vector2( 64.638, 5.079 )
+scale = Vector2( 0.5, 0.5 )
 texture = SubResource( 6 )
 __meta__ = {
 "_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PU5vZGUyRC9IZWFkL1Bhd25SaWdodC9BbmltYXRpb25QbGF5ZXIKc291cmNlfD1DOi9Vc2Vycy9EYXZpZC9PbmVEcml2ZS9CaWxkZXIvYXJ0L0FzZXNwcml0ZS9Qcm9qZWN0cy9Ub2Z1Y2hvbXAvVG9mdWNob21wX0Jvc3MgUGF3biBSaWdodC5hc2Vwcml0ZQpsYXllcnw9Cm9wX2V4cHw9RmFsc2UKb19mb2xkZXJ8PXJlczovL0Fzc2V0cwpvX25hbWV8PQpvbmx5X3Zpc2libGV8PUZhbHNlCm9fZXhfcHw9Cg=="
