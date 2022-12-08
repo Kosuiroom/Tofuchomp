@@ -8,7 +8,7 @@ onready var background = $AudioStreamPlayer
 func _ready():
 	startbtn.grab_focus()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	finalscore.text = "Final Score: " + str(Global.score)
+	finalscore.text = str(Global.score)
 	background.play()
 	
 func _on_Return_pressed():

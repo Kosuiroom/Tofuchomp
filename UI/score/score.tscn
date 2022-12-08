@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://UI/score/Label.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Tofuchomp_UI Scoreboard.png" type="Texture" id=2]
+[ext_resource path="res://Assets/PIXEL CRAFT.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 34
+font_data = ExtResource( 3 )
 
 [node name="score" type="Node2D"]
 position = Vector2( -96, -17 )
@@ -16,10 +21,10 @@ rect_scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 21.0
-margin_top = 105.0
-margin_right = 190.0
-margin_bottom = 128.0
-rect_scale = Vector2( 2, 2 )
+margin_left = 97.0
+margin_top = 94.0
+margin_right = 297.0
+margin_bottom = 159.0
+custom_fonts/font = SubResource( 1 )
 align = 1
 script = ExtResource( 1 )

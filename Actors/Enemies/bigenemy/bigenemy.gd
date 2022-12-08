@@ -3,7 +3,7 @@ extends "res://Actors/Enemies/Enemy.gd"
 var e_laser = preload("res://Actors/Enemies/enemylaser.tscn")
 onready var laser = $laser
 #onready var flashTimer = $FlashTimer
-#onready var anim = $Sprite2/AnimationPlayer
+#onready var anim = $Sprite/AnimationPlayer
 
 func _ready():
 	yield(get_tree().create_timer(1), "timeout")
@@ -37,12 +37,13 @@ func shot():
 		get_tree().get_root().add_child(Rbullet)
 		
 		yield(get_tree().create_timer(1.25), "timeout")
-
+	
+		
 func _on_bigenemy_body_entered(body):
 	print("player hit big enemy")
 	if body.is_in_group("player"):
 		body.armor -= 1
-		#flash()
+#		flash()
 		
 		
 		

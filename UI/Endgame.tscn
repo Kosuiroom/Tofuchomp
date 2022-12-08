@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Audio/cutesong2_test.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Audio/flash_attack_2.mp3" type="AudioStream" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Assets/Tofuchomp_UI Programming, Design.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Kousui Room Logo.png" type="Texture" id=18]
 [ext_resource path="res://Actors/Player/Player.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Assets/PIXEL CRAFT.ttf" type="DynamicFontData" id=20]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 5 )
@@ -47,6 +48,12 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="DynamicFont" id=7]
+size = 36
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 10
+font_data = ExtResource( 20 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -126,7 +133,6 @@ texture = ExtResource( 15 )
 position = Vector2( 115, 469 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="Title Background" parent="." instance=ExtResource( 3 )]
@@ -141,14 +147,11 @@ rect_scale = Vector2( 4.56, 6.32 )
 color = Color( 0.129412, 0.129412, 0.137255, 1 )
 
 [node name="Label" type="Label" parent="."]
-visible = false
-margin_left = 418.0
-margin_top = 101.0
-margin_right = 491.0
-margin_bottom = 132.0
-rect_scale = Vector2( 3, 3 )
-text = "Final Score:"
-align = 2
+margin_left = 675.0
+margin_top = 87.0
+margin_right = 783.0
+margin_bottom = 155.0
+custom_fonts/font = SubResource( 7 )
 
 [node name="RichTextLabel3" type="Label" parent="."]
 visible = false
