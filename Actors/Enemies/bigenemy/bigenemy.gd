@@ -2,20 +2,13 @@ extends "res://Actors/Enemies/Enemy.gd"
 
 var e_laser = preload("res://Actors/Enemies/enemylaser.tscn")
 onready var laser = $laser
-#onready var flashTimer = $FlashTimer
+onready var flashTimer = $FlashTimer
+onready var sprite = $Sprite
 #onready var anim = $Sprite/AnimationPlayer
 
 func _ready():
 	yield(get_tree().create_timer(1), "timeout")
 	shot()
-	
-#func on_FlashTimer_timeout():
-#	Sprite.material.set_shader_param("flash_modifier", 0)
-		
-		
-#func flash():
-#	Sprite.material.set_shader_param("flash_modifier", 1)
-#	flashTimer.start()
 	
 func shot():
 	while true:
@@ -42,14 +35,16 @@ func shot():
 func _on_bigenemy_body_entered(body):
 	print("player hit big enemy")
 	if body.is_in_group("player"):
+		flash()
 		body.armor -= 1
-#		flash()
 		
 		
 		
+func flash():
+	sprite.material.set_shader_param("flash_modifier", 1)
+	flashTimer.start()
 
+func _on_FlashTimer_timeout():
+	sprite.material.set_shader_param("flash_modifier", 0)
 	
-	
-	
-	
-	
+
