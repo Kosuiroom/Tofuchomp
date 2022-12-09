@@ -8,6 +8,7 @@ onready var sprite = $Sprite
 
 func _ready():
 	yield(get_tree().create_timer(1), "timeout")
+	EventBus.connect("player_laser_hit",self,"_on_player_laser_hit")
 	shot()
 	
 func shot():
@@ -33,12 +34,9 @@ func shot():
 	
 		
 func _on_bigenemy_body_entered(body):
-	print("player hit big enemy")
 	if body.is_in_group("player"):
 		flash()
 		body.armor -= 1
-		
-		
 		
 func flash():
 	sprite.material.set_shader_param("flash_modifier", 1)
@@ -47,4 +45,5 @@ func flash():
 func _on_FlashTimer_timeout():
 	sprite.material.set_shader_param("flash_modifier", 0)
 	
-
+func _on_player_laser_hit():
+	print("player laser hit enemy")

@@ -60,20 +60,21 @@ func is_killed():
 	get_tree().change_scene("res://UI/Endgame.tscn")
 
 func shot(val):
-	if shotcount <= 0:
-		spread = false
-	
-	if spread:
-		laser.play()	
-		shotleft()
-		shotright()
-		shotcount -= 1
-	else:
-		laser.play()
-		shotmiddle()
-		spread = true
-		shotcount = 10
-		headanime.play("Idle")
+	if val:
+		if shotcount <= 0:
+			spread = false
+		
+		if spread:
+			laser.play()	
+			shotleft()
+			shotright()
+			shotcount -= 1
+		else:
+			laser.play()
+			shotmiddle()
+			spread = true
+			shotcount = 10
+			headanime.play("Idle")
 		
 func shotmiddle():
 		headanime.play("Mouth")
