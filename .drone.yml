@@ -15,6 +15,12 @@ name: build
 #   EXPORT_NAME: test-project
 
 steps:
+  - name: discord notification
+    image: appleboy/drone-discord
+    settings:
+      webhook_id: 1050810473735540736
+      webhook_token: oEezs7U1Gm-34RBUBPa_D0V6c9eH8kYubkoQXj5Pj9um6diyjrwBcUhSTDb23KhGgDaD
+
   - name: export
     image: barichello/godot-ci:latest
     commands:
@@ -26,7 +32,6 @@ steps:
   #   - name: test-project-$CI_JOB_NAME
   #   - paths:
   #     - build/linux
-
 # steps:
 #   - stage: export
 #     script:
@@ -153,8 +158,3 @@ steps:
 #   dependencies:
 #     - mac
 
-  - name: discord notification
-    image: appleboy/drone-discord
-    settings:
-      webhook_id: https://discordapp.com/api/webhooks/1050810473735540736/oEezs7U1Gm-34RBUBPa_D0V6c9eH8kYubkoQXj5Pj9um6diyjrwBcUhSTDb23KhGgDaD
-      webhook_token: https://discordapp.com/api/webhooks/1050810473735540736/oEezs7U1Gm-34RBUBPa_D0V6c9eH8kYubkoQXj5Pj9um6diyjrwBcUhSTDb23KhGgDaD
