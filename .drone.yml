@@ -1,6 +1,6 @@
 kind: pipeline
 type: docker
-name: default
+name: build
 
 # NOTE: the `cd` command in each build stage is not necessary if your
 # project.godot is at the repo root
@@ -152,3 +152,9 @@ steps:
 #     - butler push ./build/mac $ITCHIO_USERNAME/$ITCHIO_GAME:mac
 #   dependencies:
 #     - mac
+
+  - name: discord notification
+    image: appleboy/drone-discord
+    settings:
+      webhook_id: https://discordapp.com/api/webhooks/1050810473735540736/oEezs7U1Gm-34RBUBPa_D0V6c9eH8kYubkoQXj5Pj9um6diyjrwBcUhSTDb23KhGgDaD
+      webhook_token: https://discordapp.com/api/webhooks/1050810473735540736/oEezs7U1Gm-34RBUBPa_D0V6c9eH8kYubkoQXj5Pj9um6diyjrwBcUhSTDb23KhGgDaD
