@@ -21,10 +21,10 @@ steps:
       webhook_id: 1050810473735540736
       webhook_token: oEezs7U1Gm-34RBUBPa_D0V6c9eH8kYubkoQXj5Pj9um6diyjrwBcUhSTDb23KhGgDaD
 
-  - name: export
-    image: barichello/godot-ci:latest
+  - name: en
+    image: alpine
     commands:
-      - echo bonjour monde
+    - echo hello world
   #    - mkdir -v -p build/linux
   #   # - cd $EXPORT_NAME
   #    - godot -v --export "Linux/X11" ../build/linux/$EXPORT_NAME.x86_64
