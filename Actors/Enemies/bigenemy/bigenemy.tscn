@@ -16,7 +16,6 @@ load_path = "res://.import/Tofuchomp_Enemy_IceCeal.png-b86102fdba5cc9f1b721949fb
 
 [sub_resource type="Animation" id=3]
 length = 0.1
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -32,7 +31,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=4]
 length = 0.2
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -48,7 +46,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=5]
 length = 0.1
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -78,7 +75,6 @@ material = SubResource( 6 )
 texture = SubResource( 2 )
 hframes = 2
 vframes = 2
-frame = 1
 __meta__ = {
 "_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PVNwcml0ZS9BbmltYXRpb25QbGF5ZXIKc291cmNlfD1DOi9Vc2Vycy9EYXZpZC9PbmVEcml2ZS9CaWxkZXIvYXJ0L0FzZXNwcml0ZS9Qcm9qZWN0cy9Ub2Z1Y2hvbXAvVG9mdWNob21wX0VuZW15X0ljZUNlYWwuYXNlcHJpdGUKbGF5ZXJ8PQpvcF9leHB8PUZhbHNlCm9fZm9sZGVyfD1yZXM6Ly9Bc3NldHMKb19uYW1lfD0Kb25seV92aXNpYmxlfD1GYWxzZQpvX2V4X3B8PQo="
 }
@@ -108,5 +104,12 @@ stream = ExtResource( 2 )
 wait_time = 0.1
 autostart = true
 
+[node name="attack" type="Timer" parent="." index="8"]
+wait_time = 1.25
+autostart = true
+
 [connection signal="body_entered" from="." to="." method="_on_bigenemy_body_entered"]
+[connection signal="animation_finished" from="Sprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_started" from="Sprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_started"]
 [connection signal="timeout" from="FlashTimer" to="." method="_on_FlashTimer_timeout"]
+[connection signal="timeout" from="attack" to="." method="_on_attack_timeout"]

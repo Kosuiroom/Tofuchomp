@@ -8,10 +8,12 @@ func _process(delta):
 	anim.play("default")
 	translate(direction.normalized() * speed * delta)
 
+
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
+	
 
-func _on_enemylaser_body_entered(body):
+func _on_enemyspread_body_entered(body):
 	if body.is_in_group("player"):
 		body.armor -= 1
 		queue_free()
