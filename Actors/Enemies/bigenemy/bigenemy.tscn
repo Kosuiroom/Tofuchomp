@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
+[ext_resource path="res://Audio/SFX/barksound.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Audio/lazershoot.wav" type="AudioStream" id=2]
 [ext_resource path="res://Actors/Enemies/bigenemy/bigenemy.gd" type="Script" id=3]
 [ext_resource path="res://Shaders/Flash.tres" type="Material" id=4]
@@ -147,6 +148,9 @@ one_shot = true
 [node name="attack" type="Timer" parent="."]
 wait_time = 1.25
 autostart = true
+
+[node name="deathsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
 
 [connection signal="body_entered" from="." to="." method="_on_bigenemy_body_entered"]
 [connection signal="animation_finished" from="Sprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

@@ -5,6 +5,8 @@ onready var laser = $laser
 onready var flashTimer = $FlashTimer
 onready var sprite = $Sprite
 onready var anim = $Sprite/AnimationPlayer
+onready var colshape = $hitbox
+onready var deathsound = $deathsound
 
 export var velocity := Vector2()
 export var speed := 200
@@ -21,7 +23,6 @@ func _on_bigenemy_body_entered(body):
 		body.armor -= 1
 	
 func _on_player_laser_hit():
-	#flash()
 	anim.play("Hit")
 
 func _on_attack_timeout():
@@ -50,10 +51,18 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	else:
 		anim.play("Idle")
 
+	if anim_name == "Death":
+		EventBus.disconnect("player_laser_hit",self,"_on_player_laser_hit")
+		queue_free()
+		
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
 func set_armor(value):
 	armor = value
 	if armor <= 0:
-		queue_free()
+		deathsound.play()
+		colshape.set_deferred("disabled", true)
+		anim.play("Death")
+
+		
