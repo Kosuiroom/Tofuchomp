@@ -1,4 +1,4 @@
-extends "res://Actors/Enemies/Enemy.gd"
+extends Area2D
 
 var e_laser = preload("res://Actors/Enemies/enemyspread.tscn")
 onready var laser = $laser
@@ -6,19 +6,19 @@ onready var flashTimer = $FlashTimer
 onready var sprite = $Sprite
 onready var anim = $Sprite/AnimationPlayer
 
+export var velocity := Vector2()
+export var speed := 200
+export var armor: = 2 setget set_armor
+
+func _process(delta):
+	translate(velocity.normalized() * speed * delta)
+
 func _ready():
 	EventBus.connect("player_laser_hit",self,"_on_player_laser_hit")
 	
 func _on_bigenemy_body_entered(body):
 	if body.is_in_group("player"):
 		body.armor -= 1
-		
-#func flash():
-	#sprite.material.set_shader_param("flash_modifier", 1)
-	#flashTimer.start()
-
-#func _on_FlashTimer_timeout():
-	#sprite.material.set_shader_param("flash_modifier", 0)
 	
 func _on_player_laser_hit():
 	#flash()
@@ -27,7 +27,7 @@ func _on_player_laser_hit():
 func _on_attack_timeout():
 	laser.play()
 	anim.play("Attack")
-	#anim.play("Hit")
+
 	var Lbullet = e_laser.instance()
 	Lbullet.direction = $left.global_position - global_position
 	Lbullet.global_position = $left.global_position
@@ -49,3 +49,11 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		anim.play("Idle")
 	else:
 		anim.play("Idle")
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()
+
+func set_armor(value):
+	armor = value
+	if armor <= 0:
+		queue_free()
