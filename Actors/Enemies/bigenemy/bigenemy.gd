@@ -45,7 +45,5 @@ func _on_attack_timeout():
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Attack":
 		anim.play("Idle")
-
-
-func _on_AnimationPlayer_animation_started(anim_name):
-	print(anim_name)
+	else:
+		anim.play("Idle")

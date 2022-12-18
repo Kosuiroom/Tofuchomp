@@ -14,7 +14,7 @@ onready var rpawanime = $Body/PawnRight/AnimationPlayer
 var is_invinc = false
 
 ##middlegun
-onready var mm_gun = $middlegun/middlemiddle
+onready var mm_gun = $middlemiddle
 onready var player = get_tree().get_nodes_in_group("player")[0]
 
 ##rightgun
@@ -74,15 +74,13 @@ func shot(val):
 			shotmiddle()
 			spread = true
 			shotcount = 10
-			headanime.play("Idle")
 		
 func shotmiddle():
 		headanime.play("Mouth")
-		var mlbullet = b_laser.instance()
-		mlbullet.direction = $middlegun/middlemiddle.global_position - global_position
-		mlbullet.global_position = $middlegun/middlemiddle.global_position
-		get_tree().get_root().add_child(mlbullet)
-		headanime.play("Idle")
+		var bullet = b_laser.instance()
+		bullet.direction = $middlemiddle.global_position
+		bullet.global_position = $middlemiddle.global_position
+		get_tree().get_root().add_child(bullet)
 		
 func shotleft():
 		lpawanime.play("default")
@@ -130,3 +128,9 @@ func _on_boss_body_entered(body):
 	if body.is_in_group("player"):
 		if body.armor > 0:
 			body.armor -= 1
+
+
+func _on_HeadAnimationPlayer_animation_finished(anim_name):
+	if anim_name == "Mouth":
+		yield(get_tree().create_timer(2), "timeout")
+		headanime.play("Idle")

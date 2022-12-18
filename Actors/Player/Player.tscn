@@ -107,7 +107,7 @@ shape = SubResource( 2 )
 position = Vector2( -28, -44 )
 
 [node name="middle" type="Position2D" parent="."]
-position = Vector2( -3, -44 )
+position = Vector2( -1, -44 )
 
 [node name="right" type="Position2D" parent="."]
 position = Vector2( 23, -44 )

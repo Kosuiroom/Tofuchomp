@@ -9,7 +9,6 @@ load_path = "res://.import/Tofuchomp_Boss Head.png-57604fe7677f46c6cdcf3ba8a511b
 
 [sub_resource type="Animation" id=9]
 length = 0.5
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -130,6 +129,9 @@ anims/default = SubResource( 7 )
 position = Vector2( 111.5, -105.344 )
 shape = SubResource( 1 )
 
+[node name="middlemiddle" type="Position2D" parent="."]
+position = Vector2( 116, 42 )
+
 [node name="leftgun" type="Node2D" parent="."]
 position = Vector2( -220, -53 )
 __meta__ = {
@@ -160,15 +162,6 @@ position = Vector2( -7.99998, 21 )
 [node name="rightright" type="Position2D" parent="rightgun"]
 position = Vector2( -23, 7 )
 
-[node name="middlegun" type="Node2D" parent="."]
-position = Vector2( 112, 40 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="middlemiddle" type="Position2D" parent="middlegun"]
-position = Vector2( 0, 11 )
-
 [node name="mjau" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 
@@ -176,3 +169,4 @@ stream = ExtResource( 1 )
 stream = ExtResource( 3 )
 
 [connection signal="body_entered" from="." to="." method="_on_boss_body_entered"]
+[connection signal="animation_finished" from="Body/Head/HeadAnimationPlayer" to="." method="_on_HeadAnimationPlayer_animation_finished"]

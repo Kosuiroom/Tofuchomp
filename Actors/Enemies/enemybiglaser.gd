@@ -13,5 +13,5 @@ func _on_VisibilityNotifier2D_viewport_exited(_viewport):
 
 func _on_enemybiglaser_body_entered(body):
 	if body.is_in_group("player"):
-		body.armor -= Global.dmg
+		body.armor -= 1
 		queue_free()
