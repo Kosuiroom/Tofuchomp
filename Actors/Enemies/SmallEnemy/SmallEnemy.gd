@@ -15,14 +15,6 @@ func _on_smallenemy_body_entered(body):
 		anim.play("Death")
 
 
-func _on_smallenemy_area_entered(area):
-	pass
-#	if area.name == "Laser":
-#		if area.armor <= 0:
-#			print("small enemy died")
-#			anim.play("Death")
-
-
 func set_armor(value):
 	armor = value
 	if armor <= 0:
@@ -36,5 +28,4 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_SpriteAnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Death":
-		EventBus.disconnect("player_laser_hit",self,"_on_player_laser_hit")
 		queue_free()

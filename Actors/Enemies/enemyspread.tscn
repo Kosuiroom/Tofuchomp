@@ -24,7 +24,7 @@ tracks/0/keys = {
 [sub_resource type="CircleShape2D" id=3]
 radius = 7.07107
 
-[node name="enemyspread" type="Area2D"]
+[node name="enemyspread" type="Area2D" groups=["enemyspread"]]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

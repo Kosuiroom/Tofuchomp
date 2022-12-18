@@ -11,7 +11,9 @@ onready var colshape = $CollisionShape2D
 onready var headanime = $Body/Head/HeadAnimationPlayer
 onready var lpawanime = $Body/PawnLeft/PawnLeftAnimationPlayer
 onready var rpawanime = $Body/PawnRight/AnimationPlayer
+onready var deathsound = $deathsound
 var is_invinc = false
+var iskilled = false
 
 ##middlegun
 onready var mm_gun = $middlemiddle
@@ -42,7 +44,7 @@ func _process(delta):
 	if position == Vector2(400,200):
 		invinc(false)
 		elapsed += delta
-		if elapsed > 0.5:
+		if elapsed > 0.5 and !iskilled:
 			shot(true)
 			elapsed = 0
 	else:
@@ -50,12 +52,17 @@ func _process(delta):
 
 func set_armor(value):
 	armor = value
-	if armor <= 0:
+	if armor == 0:
+		shot(false)
+		iskilled = true
+		get_tree().call_group("enemylasers", "queue_free")
 		is_killed()
 		
 func is_killed():
+	deathsound.play()
 	sprite.visible = false
 	shot(false)
+	invinc(true)
 	yield(get_tree().create_timer(2), "timeout")
 	get_tree().change_scene("res://UI/Endgame.tscn")
 

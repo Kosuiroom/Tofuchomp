@@ -48,11 +48,17 @@ func _on_attack_timeout():
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Attack":
 		anim.play("Idle")
-	else:
+	else: 
 		anim.play("Idle")
+#
+#	if anim_name == "Hit":
+#		anim.play("Idle")
 
 	if anim_name == "Death":
 		EventBus.disconnect("player_laser_hit",self,"_on_player_laser_hit")
+		deathsound.play()
+		colshape.set_deferred("disabled", true)
+		sprite.visible = false
 		queue_free()
 		
 func _on_VisibilityNotifier2D_screen_exited():
@@ -61,8 +67,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 func set_armor(value):
 	armor = value
 	if armor <= 0:
-		deathsound.play()
-		colshape.set_deferred("disabled", true)
 		anim.play("Death")
 
 		
