@@ -1,14 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Actors/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Audio/lazershoot.wav" type="AudioStream" id=2]
 [ext_resource path="res://Audio/SFX/barkingsound.wav" type="AudioStream" id=3]
-[ext_resource path="res://Shaders/Flash.tres" type="Shader" id=4]
-
-[sub_resource type="ShaderMaterial" id=9]
-shader = ExtResource( 4 )
-shader_param/flash_color = Color( 1, 1, 1, 1 )
-shader_param/flash_modifier = 0.0
 
 [sub_resource type="StreamTexture" id=7]
 load_path = "res://.import/Tofuchomp_Player.png-287947d1f82ff51f37d9aaea3918390e.stex"
@@ -87,7 +81,6 @@ speed = 400
 armor = 50000
 
 [node name="Sprite2" type="Sprite" parent="."]
-material = SubResource( 9 )
 position = Vector2( 0.249997, 0.222763 )
 scale = Vector2( 2.37109, 2.11286 )
 texture = SubResource( 7 )
