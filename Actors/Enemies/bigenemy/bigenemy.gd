@@ -2,6 +2,7 @@ extends Area2D
 
 var e_laser = preload("res://Actors/Enemies/enemyspread.tscn")
 onready var laser = $laser
+onready var flashTimer = $FlashTimer
 onready var sprite = $Sprite
 onready var anim = $Sprite/AnimationPlayer
 onready var colshape = $hitbox
@@ -22,8 +23,7 @@ func _on_bigenemy_body_entered(body):
 		body.armor -= 1
 	
 func _on_player_laser_hit():
-#	anim.play("Hit")
-	pass
+	anim.play("Hit2")
 
 func _on_attack_timeout():
 	laser.play()
@@ -50,15 +50,12 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		anim.play("Idle")
 	else: 
 		anim.play("Idle")
-#
-#	if anim_name == "Hit":
-#		anim.play("Idle")
 
-	if anim_name == "Death":
+	if anim_name == "Explosion":
 		EventBus.disconnect("player_laser_hit",self,"_on_player_laser_hit")
 		deathsound.play()
 		colshape.set_deferred("disabled", true)
-		sprite.visible = false
+		#sprite.visible = false
 		queue_free()
 		
 func _on_VisibilityNotifier2D_screen_exited():
@@ -67,6 +64,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 func set_armor(value):
 	armor = value
 	if armor <= 0:
-		anim.play("Death")
+		anim.play("Explosion")
 
 		
