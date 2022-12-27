@@ -82,6 +82,7 @@ extents = Vector2( 121.5, 109.344 )
 [node name="boss" type="Area2D" groups=["boss"]]
 position = Vector2( 0, -1 )
 script = ExtResource( 2 )
+armor = 5
 
 [node name="Body" type="Node2D" parent="."]
 position = Vector2( 75, -53 )

@@ -2,7 +2,6 @@ extends Area2D
 
 var e_laser = preload("res://Actors/Enemies/enemyspread.tscn")
 onready var laser = $laser
-onready var flashTimer = $FlashTimer
 onready var sprite = $Sprite
 onready var anim = $Sprite/AnimationPlayer
 onready var colshape = $hitbox
@@ -23,7 +22,8 @@ func _on_bigenemy_body_entered(body):
 		body.armor -= 1
 	
 func _on_player_laser_hit():
-	anim.play("Hit")
+#	anim.play("Hit")
+	pass
 
 func _on_attack_timeout():
 	laser.play()

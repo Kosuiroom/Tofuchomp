@@ -12,7 +12,6 @@ onready var headanime = $Body/Head/HeadAnimationPlayer
 onready var lpawanime = $Body/PawnLeft/PawnLeftAnimationPlayer
 onready var rpawanime = $Body/PawnRight/AnimationPlayer
 onready var deathsound = $deathsound
-var is_invinc = false
 var iskilled = false
 
 ##middlegun
@@ -36,33 +35,37 @@ export var shotcount = 10
 var spread := true
 
 func _ready():
+	invinc(true)
 	mjau.play()
 	
 func _process(delta):
-	position = position.move_toward(Vector2(400,200), delta * mvspeed)
 	
-	if position == Vector2(400,200):
-		invinc(false)
-		elapsed += delta
-		if elapsed > 0.5 and !iskilled:
-			shot(true)
-			elapsed = 0
-	else:
+	if iskilled:
+		shot(false)
 		invinc(true)
+		headanime.play("Mouth")
+		position = position.move_toward(Vector2(400,-200), delta * mvspeed)
+		if position == Vector2(400,-200):
+			is_killed()
+
+	if !iskilled:
+		position = position.move_toward(Vector2(400,200), delta * mvspeed)
+		if position == Vector2(400,200) && !iskilled:
+			invinc(false)
+			elapsed += delta
+			if elapsed > 0.5 and !iskilled:
+				shot(true)
+				elapsed = 0
 
 func set_armor(value):
 	armor = value
 	if armor == 0:
 		shot(false)
 		iskilled = true
+		deathsound.play()
 		get_tree().call_group("enemylasers", "queue_free")
-		is_killed()
 		
 func is_killed():
-	deathsound.play()
-	sprite.visible = false
-	shot(false)
-	invinc(true)
 	yield(get_tree().create_timer(2), "timeout")
 	get_tree().change_scene("res://UI/Endgame.tscn")
 
@@ -138,6 +141,6 @@ func _on_boss_body_entered(body):
 
 
 func _on_HeadAnimationPlayer_animation_finished(anim_name):
-	if anim_name == "Mouth":
+	if anim_name == "Mouth" && !iskilled:
 		yield(get_tree().create_timer(2), "timeout")
 		headanime.play("Idle")
