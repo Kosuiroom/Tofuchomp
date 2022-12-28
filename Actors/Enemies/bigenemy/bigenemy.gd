@@ -2,11 +2,11 @@ extends Area2D
 
 var e_laser = preload("res://Actors/Enemies/enemyspread.tscn")
 onready var laser = $laser
-onready var flashTimer = $FlashTimer
 onready var sprite = $Sprite
 onready var anim = $Sprite/AnimationPlayer
 onready var colshape = $hitbox
 onready var deathsound = $deathsound
+onready var attack = $attack
 
 export var velocity := Vector2()
 export var speed := 200
@@ -23,7 +23,8 @@ func _on_bigenemy_body_entered(body):
 		body.armor -= 1
 	
 func _on_player_laser_hit():
-	anim.play("Hit2")
+#	anim.play("Hit2")
+	pass
 
 func _on_attack_timeout():
 	laser.play()
@@ -46,17 +47,16 @@ func _on_attack_timeout():
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	if anim_name == "Attack":
-		anim.play("Idle")
-	else: 
+	if anim_name == "Hit2" && armor > 0:
 		anim.play("Idle")
 
 	if anim_name == "Explosion":
 		EventBus.disconnect("player_laser_hit",self,"_on_player_laser_hit")
-		deathsound.play()
-		colshape.set_deferred("disabled", true)
-		#sprite.visible = false
+		sprite.visible = false
 		queue_free()
+	
+	if anim_name == "Attack":
+		anim.play("Idle")
 		
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
@@ -64,6 +64,9 @@ func _on_VisibilityNotifier2D_screen_exited():
 func set_armor(value):
 	armor = value
 	if armor <= 0:
+		print("death")
+		deathsound.play()
+		colshape.set_deferred("disabled", true)
+		attack.stop()
+		anim.stop()
 		anim.play("Explosion")
-
-		

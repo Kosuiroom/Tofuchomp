@@ -7,7 +7,6 @@
 
 [sub_resource type="Animation" id=3]
 length = 0.1
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
@@ -71,70 +70,8 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=4]
 length = 0.2
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = false
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 5 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = false
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 6 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:vframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = false
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 6 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath(".:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = false
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath(".:frame")
-tracks/4/interp = 1
-tracks/4/loop_wrap = false
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 2.0, 3.0 ]
-}
 
 [sub_resource type="Animation" id=14]
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
@@ -199,18 +136,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id=10]
 resource_name = "Hit"
 length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:material:shader_param/hit_opacity")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0, 0.0 ]
-}
 
 [sub_resource type="Animation" id=15]
 tracks/0/type = "value"
@@ -276,7 +201,6 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=5]
 length = 0.1
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
@@ -374,7 +298,7 @@ __meta__ = {
 "o_folder": "res://Assets",
 "o_name": "",
 "only_visible": false,
-"op_exp": false,
+"op_exp": true,
 "player": "Sprite/AnimationPlayer",
 "source": "C:/Users/David/OneDrive/Bilder/art/Asesprite/Projects/Tofuchomp/Aseprite Projects/Tofuchomp_Enemy_IceCeal.aseprite"
 },
@@ -410,10 +334,6 @@ position = Vector2( 18, 19 )
 [node name="laser" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 
-[node name="FlashTimer" type="Timer" parent="."]
-wait_time = 0.1
-one_shot = true
-
 [node name="attack" type="Timer" parent="."]
 wait_time = 1.25
 autostart = true
@@ -424,5 +344,4 @@ stream = ExtResource( 1 )
 [connection signal="body_entered" from="." to="." method="_on_bigenemy_body_entered"]
 [connection signal="animation_finished" from="Sprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
-[connection signal="timeout" from="FlashTimer" to="." method="_on_FlashTimer_timeout"]
 [connection signal="timeout" from="attack" to="." method="_on_attack_timeout"]
