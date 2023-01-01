@@ -15,16 +15,10 @@ export var armor: = 2 setget set_armor
 func _process(delta):
 	translate(velocity.normalized() * speed * delta)
 
-func _ready():
-	EventBus.connect("player_laser_hit",self,"_on_player_laser_hit")
 	
 func _on_bigenemy_body_entered(body):
 	if body.is_in_group("player"):
 		body.armor -= 1
-	
-func _on_player_laser_hit():
-#	anim.play("Hit2")
-	pass
 
 func _on_attack_timeout():
 	laser.play()
@@ -50,8 +44,9 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Hit2" && armor > 0:
 		anim.play("Idle")
 
+	print("anim: ", anim_name)
 	if anim_name == "Explosion":
-		EventBus.disconnect("player_laser_hit",self,"_on_player_laser_hit")
+		print("should play explosion now")
 		sprite.visible = false
 		queue_free()
 	
@@ -68,5 +63,4 @@ func set_armor(value):
 		deathsound.play()
 		colshape.set_deferred("disabled", true)
 		attack.stop()
-		anim.stop()
 		anim.play("Explosion")

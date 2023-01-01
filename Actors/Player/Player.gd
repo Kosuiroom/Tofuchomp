@@ -6,6 +6,7 @@ export var armor = 1 setget set_armor
 var velocity := Vector2()
 var e_laser = preload("res://Actors/Player/Laser.tscn")
 var e_biglaser = preload("res://Actors/Player/biglaser.tscn")
+var e_spread = preload("res://Actors/Player/spread.tscn")
 onready var Anime = $AnimationPlayer
 onready var lasersound = $lasersound
 onready var barkingsound = $Barkingsound
@@ -40,17 +41,17 @@ func _physics_process(_delta: float) -> void:
 func fire():
 	if spread:
 		Global.dmg = 1
-		var Lbullet = e_laser.instance()
+		var Lbullet = e_spread.instance()
 		Lbullet.direction = $left.global_position - global_position
 		Lbullet.global_position = $left.global_position
 		get_tree().get_root().add_child(Lbullet)
 		
-		var Mbullet = e_laser.instance()
+		var Mbullet = e_spread.instance()
 		Mbullet.direction = $middle.global_position - global_position
 		Mbullet.global_position = $middle.global_position
 		get_tree().get_root().add_child(Mbullet)
 		
-		var Rbullet = e_laser.instance()
+		var Rbullet = e_spread.instance()
 		Rbullet.direction = $right.global_position - global_position
 		Rbullet.global_position = $right.global_position
 		get_tree().get_root().add_child(Rbullet)
