@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Audio/SFX/barksound.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Audio/enemy_death_2.wav" type="AudioStream" id=1]
 [ext_resource path="res://Audio/lazershoot.wav" type="AudioStream" id=2]
 [ext_resource path="res://Actors/Enemies/bigenemy/bigenemy.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Tofuchomp_Enemy_IceCeal.png" type="Texture" id=5]

@@ -12,6 +12,7 @@ onready var headanime = $Body/Head/HeadAnimationPlayer
 onready var lpawanime = $Body/PawnLeft/PawnLeftAnimationPlayer
 onready var rpawanime = $Body/PawnRight/AnimationPlayer
 onready var deathsound = $deathsound
+onready var vicjingle = $victory
 var iskilled = false
 
 ##middlegun
@@ -24,6 +25,7 @@ onready var rm_gun = $rightgun/rightmiddle
 onready var rr_gun = $rightgun/rightright
 onready var mjau = $mjau
 onready var laser = $lasershot
+var oneshot = true
 
 var e_laser = preload("res://Actors/Enemies/enemylaser.tscn")
 var b_laser = preload("res://Actors/Enemies/enemybiglaser.tscn")
@@ -45,7 +47,8 @@ func _process(delta):
 		invinc(true)
 		headanime.play("Mouth")
 		position = position.move_toward(Vector2(400,-200), delta * mvspeed)
-		if position == Vector2(400,-200):
+		if position == Vector2(400,-200) && oneshot:
+			oneshot = false
 			is_killed()
 
 	if !iskilled:
@@ -66,6 +69,7 @@ func set_armor(value):
 		get_tree().call_group("enemylasers", "queue_free")
 		
 func is_killed():
+	vicjingle.play()
 	yield(get_tree().create_timer(2), "timeout")
 	get_tree().change_scene("res://UI/Endgame.tscn")
 
@@ -139,7 +143,6 @@ func _on_boss_body_entered(body):
 	if body.is_in_group("player"):
 		if body.armor > 0:
 			body.armor -= 1
-
 
 func _on_HeadAnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Mouth" && !iskilled:
