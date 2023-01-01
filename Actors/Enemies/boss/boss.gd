@@ -88,7 +88,8 @@ func shot(val):
 func shotmiddle():
 		headanime.play("Mouth")
 		var bullet = b_laser.instance()
-		bullet.direction = $middlemiddle.global_position
+		var mshotdir = player.global_position
+		bullet.direction = mshotdir - global_position
 		bullet.global_position = $middlemiddle.global_position
 		get_tree().get_root().add_child(bullet)
 		

@@ -18,7 +18,6 @@ func _on_Laser_area_entered(area):
 	elif area.is_in_group("bigenemy"):
 		area.armor -= Global.dmg
 		area.anim.play("Hit2")
-#		EventBus.emit_signal("player_laser_hit")
 		if area.armor == 0:
 			Global.score += 300
 		queue_free()

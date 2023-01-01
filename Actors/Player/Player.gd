@@ -12,6 +12,7 @@ onready var lasersound = $lasersound
 onready var barkingsound = $Barkingsound
 var spread = false
 var biglaser:= false
+var inputactive:= true
 
 func _physics_process(_delta: float) -> void:
 	var direction := Vector2(
@@ -74,5 +75,6 @@ func set_armor(value):
 		is_killed()
 		
 func is_killed():
+	set_process_unhandled_input(false)
 	yield(get_tree().create_timer(1), "timeout")
 	get_tree().change_scene("res://UI/Endgame.tscn")
