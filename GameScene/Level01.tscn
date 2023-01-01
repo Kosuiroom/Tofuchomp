@@ -24,7 +24,7 @@ script = ExtResource( 4 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="score" parent="CanvasLayer" instance=ExtResource( 7 )]
-position = Vector2( 669, 460 )
+position = Vector2( 705, 469 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="pause" parent="CanvasLayer" instance=ExtResource( 6 )]
@@ -62,6 +62,7 @@ position = Vector2( 508, 554 )
 autostart = true
 
 [node name="bossspawntimer" type="Timer" parent="."]
+wait_time = 30.0
 one_shot = true
 autostart = true
 
