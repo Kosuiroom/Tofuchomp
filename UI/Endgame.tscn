@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Audio/cutesong2_test.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Audio/flash_attack_2.mp3" type="AudioStream" id=2]
@@ -37,13 +37,9 @@ region = Rect2( 256, 0, 128, 128 )
 atlas = ExtResource( 5 )
 region = Rect2( 0, 128, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 5 )
-region = Rect2( 128, 128, 128, 128 )
-
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -133,6 +129,7 @@ texture = ExtResource( 15 )
 position = Vector2( 115, 469 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 6 )
+frame = 3
 playing = true
 
 [node name="Title Background" parent="." instance=ExtResource( 3 )]
