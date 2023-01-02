@@ -32,7 +32,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 4 ]
+"values": [ 5 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Sprite2:vframes")
@@ -44,7 +44,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 3 ]
+"values": [ 4 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Sprite2:visible")
@@ -72,8 +72,6 @@ tracks/4/keys = {
 }
 
 [sub_resource type="Animation" id=9]
-length = 0.6
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite2:texture")
 tracks/0/interp = 1
@@ -96,7 +94,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 4 ]
+"values": [ 5 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Sprite2:vframes")
@@ -108,7 +106,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 3 ]
+"values": [ 4 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Sprite2:visible")
@@ -129,10 +127,10 @@ tracks/4/loop_wrap = false
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 5.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0 ]
+"values": [ 5.0, 6.0, 7.0, 8.0, 8.0, 9.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -160,7 +158,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 4 ]
+"values": [ 5 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Sprite2:vframes")
@@ -172,7 +170,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 3 ]
+"values": [ 4 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Sprite2:visible")
@@ -224,7 +222,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 4 ]
+"values": [ 5 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Sprite2:vframes")
@@ -236,7 +234,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 3 ]
+"values": [ 4 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Sprite2:visible")
@@ -288,7 +286,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 4 ]
+"values": [ 5 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Sprite2:vframes")
@@ -300,7 +298,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 3 ]
+"values": [ 4 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Sprite2:visible")
@@ -337,8 +335,9 @@ speed = 400
 position = Vector2( 0.249997, 0.222763 )
 scale = Vector2( 2.37109, 2.11286 )
 texture = ExtResource( 4 )
-hframes = 4
-vframes = 3
+hframes = 5
+vframes = 4
+frame = 5
 __meta__ = {
 "_aseprite_wizard_config_": {
 "layer": "",
@@ -346,7 +345,7 @@ __meta__ = {
 "o_folder": "res://Assets",
 "o_name": "",
 "only_visible": false,
-"op_exp": true,
+"op_exp": false,
 "player": "AnimationPlayer",
 "source": "C:/Users/David/OneDrive/Bilder/art/Asesprite/Projects/Tofuchomp/Aseprite Projects/Tofuchomp_Player.aseprite"
 },
