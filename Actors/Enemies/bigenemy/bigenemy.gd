@@ -19,6 +19,7 @@ func _process(delta):
 func _on_bigenemy_body_entered(body):
 	if body.is_in_group("player"):
 		body.armor -= 1
+		body.Anime.play("Death")
 
 func _on_attack_timeout():
 	laser.play()
@@ -44,9 +45,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Hit2" && armor > 0:
 		anim.play("Idle")
 
-	print("anim: ", anim_name)
 	if anim_name == "Explosion":
-		print("should play explosion now")
 		sprite.visible = false
 		queue_free()
 	
@@ -59,7 +58,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 func set_armor(value):
 	armor = value
 	if armor <= 0:
-		print("death")
 		deathsound.play()
 		colshape.set_deferred("disabled", true)
 		attack.stop()

@@ -17,10 +17,13 @@ func _on_biglaser_area_entered(area):
 		queue_free()
 	elif area.is_in_group("bigenemy"):
 		area.armor -= Global.dmg
+		area.anim.play("Hit2")
 		if area.armor == 0:
+			area.anim.play("Explosion")
 			Global.score += 300
 		queue_free()
 	elif area.is_in_group("boss"):
+		area.headanime.play("Hit")
 		area.armor -= Global.dmg
 		if area.armor == 0:
 			Global.score += 5000

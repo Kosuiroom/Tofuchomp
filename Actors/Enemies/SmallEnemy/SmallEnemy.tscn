@@ -6,7 +6,6 @@
 
 [sub_resource type="Animation" id=3]
 length = 0.1
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite1:frame")
 tracks/0/interp = 1
@@ -81,7 +80,6 @@ tracks/5/keys = {
 }
 
 [sub_resource type="Animation" id=4]
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite1:frame")
 tracks/0/interp = 1
@@ -245,7 +243,7 @@ armor = 1
 texture = ExtResource( 3 )
 hframes = 4
 vframes = 4
-frame = 14
+frame = 15
 __meta__ = {
 "_aseprite_wizard_config_": {
 "layer": "",

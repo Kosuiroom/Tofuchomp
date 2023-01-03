@@ -13,5 +13,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_enemylaser_body_entered(body):
 	if body.is_in_group("player"):
+		body.Anime.play("Death")	
 		body.armor -= 1
 		queue_free()

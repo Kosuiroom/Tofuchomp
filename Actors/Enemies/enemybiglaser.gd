@@ -10,6 +10,7 @@ func _process(delta):
 		
 func _on_enemybiglaser_body_entered(body):
 	if body.is_in_group("player"):
+		body.Anime.play("Death")
 		body.armor -= 1
 		queue_free()
 

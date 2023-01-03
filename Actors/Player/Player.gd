@@ -71,10 +71,11 @@ func fire():
 
 func set_armor(value):
 	armor = value
-	if armor <= 0: 
+	if armor <= 0:
+		print("player died")
+		Anime.play("Death")
 		is_killed()
 		
 func is_killed():
-	set_process_unhandled_input(false)
 	yield(get_tree().create_timer(1), "timeout")
 	get_tree().change_scene("res://UI/Endgame.tscn")

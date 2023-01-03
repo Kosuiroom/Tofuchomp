@@ -129,7 +129,6 @@ texture = ExtResource( 15 )
 position = Vector2( 115, 469 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="Title Background" parent="." instance=ExtResource( 3 )]

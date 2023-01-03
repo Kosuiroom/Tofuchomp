@@ -135,7 +135,6 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=4]
 length = 0.6
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite2:texture")
 tracks/0/interp = 1
@@ -345,7 +344,7 @@ __meta__ = {
 "o_folder": "res://Assets",
 "o_name": "",
 "only_visible": false,
-"op_exp": false,
+"op_exp": true,
 "player": "AnimationPlayer",
 "source": "C:/Users/David/OneDrive/Bilder/art/Asesprite/Projects/Tofuchomp/Aseprite Projects/Tofuchomp_Player.aseprite"
 },

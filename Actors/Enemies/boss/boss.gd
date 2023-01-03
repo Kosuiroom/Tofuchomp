@@ -145,6 +145,10 @@ func _on_boss_body_entered(body):
 			body.armor -= 1
 
 func _on_HeadAnimationPlayer_animation_finished(anim_name):
+	if anim_name == "Hit" && !iskilled:
+		yield(get_tree().create_timer(1), "timeout")
+		headanime.play("Idle")
+		
 	if anim_name == "Mouth" && !iskilled:
 		yield(get_tree().create_timer(2), "timeout")
 		headanime.play("Idle")

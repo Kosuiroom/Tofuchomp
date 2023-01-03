@@ -292,7 +292,6 @@ armor = 4
 texture = ExtResource( 5 )
 hframes = 6
 vframes = 6
-frame = 30
 __meta__ = {
 "_aseprite_wizard_config_": {
 "layer": "",

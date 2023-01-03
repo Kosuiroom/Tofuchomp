@@ -62,7 +62,7 @@ position = Vector2( 508, 554 )
 autostart = true
 
 [node name="bossspawntimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 30.0
 one_shot = true
 autostart = true
 
