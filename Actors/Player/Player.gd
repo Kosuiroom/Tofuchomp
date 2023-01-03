@@ -10,11 +10,24 @@ var e_spread = preload("res://Actors/Player/spread.tscn")
 onready var Anime = $Player/AnimationPlayer
 onready var lasersound = $lasersound
 onready var barkingsound = $Barkingsound
+onready var colshape = $CollisionShape2D
 var spread = false
 var biglaser:= false
-var inputactive:= true
+
+var iskilled := false
+var playonce := true
 
 func _physics_process(_delta: float) -> void:
+	
+	if armor == 0:
+		playonce = false
+		print("exec once")
+#		colshape.set_deferred("disabled", true)
+		Anime.play("PlayerDeath")
+		yield(get_tree().create_timer(1), "timeout")
+		get_tree().change_scene("res://UI/Endgame.tscn")
+		
+	
 	var direction := Vector2(
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
 		Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
@@ -72,19 +85,14 @@ func fire():
 func set_armor(value):
 	armor = value
 	if armor == 0:
-		is_killed()
+		pass
 		
-func is_killed():
-	Anime.play("PlayerDeath")
-	#yield(get_tree().create_timer(2), "timeout")
-	#get_tree().change_scene("res://UI/Endgame.tscn")
-
-
-func _on_AnimationPlayer_animation_started(anim_name):
-	if anim_name == "PlayerDeath":
-		print("started: ", anim_name)
+#func is_killed():
+#	print("iskilled")
+#	colshape.set_deferred("disabled", true)
+#	get_tree().change_scene("res://UI/Endgame.tscn")
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "PlayerDeath":
-		print("finished: ", anim_name)
+		pass
