@@ -5,13 +5,10 @@
 [ext_resource path="res://Audio/SFX/barkingsound.wav" type="AudioStream" id=3]
 [ext_resource path="res://Assets/Tofuchomp_Player.png" type="Texture" id=4]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 12.2319, 18.3358 )
-
 [sub_resource type="Animation" id=8]
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite2:texture")
+tracks/0/path = NodePath("Player:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/imported = false
@@ -23,7 +20,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite2:hframes")
+tracks/1/path = NodePath("Player:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/imported = false
@@ -35,7 +32,7 @@ tracks/1/keys = {
 "values": [ 5 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:vframes")
+tracks/2/path = NodePath("Player:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = false
 tracks/2/imported = false
@@ -47,7 +44,7 @@ tracks/2/keys = {
 "values": [ 4 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite2:visible")
+tracks/3/path = NodePath("Player:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = false
 tracks/3/imported = false
@@ -59,7 +56,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Sprite2:frame")
+tracks/4/path = NodePath("Player:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = false
 tracks/4/imported = false
@@ -71,72 +68,11 @@ tracks/4/keys = {
 "values": [ 0.0, 1.0, 2.0, 3.0, 4.0 ]
 }
 
-[sub_resource type="Animation" id=9]
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite2:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = false
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 4 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite2:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = false
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 5 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:vframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = false
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 4 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite2:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = false
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Sprite2:frame")
-tracks/4/interp = 1
-tracks/4/loop_wrap = false
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 5.0, 6.0, 7.0, 8.0, 8.0, 9.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0 ]
-}
-
 [sub_resource type="Animation" id=4]
 length = 0.6
+loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite2:texture")
+tracks/0/path = NodePath("Player:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/imported = false
@@ -148,7 +84,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite2:hframes")
+tracks/1/path = NodePath("Player:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/imported = false
@@ -160,7 +96,7 @@ tracks/1/keys = {
 "values": [ 5 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:vframes")
+tracks/2/path = NodePath("Player:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = false
 tracks/2/imported = false
@@ -172,7 +108,7 @@ tracks/2/keys = {
 "values": [ 4 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite2:visible")
+tracks/3/path = NodePath("Player:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = false
 tracks/3/imported = false
@@ -184,7 +120,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Sprite2:frame")
+tracks/4/path = NodePath("Player:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = false
 tracks/4/imported = false
@@ -196,11 +132,10 @@ tracks/4/keys = {
 "values": [ 0.0, 1.0, 2.0 ]
 }
 
-[sub_resource type="Animation" id=5]
-length = 0.2
-loop = true
+[sub_resource type="Animation" id=9]
+resource_name = "PlayerDeath"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite2:texture")
+tracks/0/path = NodePath("Player:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/imported = false
@@ -212,7 +147,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite2:hframes")
+tracks/1/path = NodePath("Player:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/imported = false
@@ -224,7 +159,7 @@ tracks/1/keys = {
 "values": [ 5 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:vframes")
+tracks/2/path = NodePath("Player:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = false
 tracks/2/imported = false
@@ -236,7 +171,7 @@ tracks/2/keys = {
 "values": [ 4 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite2:visible")
+tracks/3/path = NodePath("Player:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = false
 tracks/3/imported = false
@@ -248,7 +183,70 @@ tracks/3/keys = {
 "values": [ true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Sprite2:frame")
+tracks/4/path = NodePath("Player:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = false
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5.0, 6.0, 7.0, 8.0, 8.0, 9.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Player:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Player:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Player:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Player:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = false
 tracks/4/imported = false
@@ -262,9 +260,8 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=6]
 length = 0.2
-loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite2:texture")
+tracks/0/path = NodePath("Player:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/imported = false
@@ -276,7 +273,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite2:hframes")
+tracks/1/path = NodePath("Player:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/imported = false
@@ -288,7 +285,7 @@ tracks/1/keys = {
 "values": [ 5 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:vframes")
+tracks/2/path = NodePath("Player:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = false
 tracks/2/imported = false
@@ -300,7 +297,7 @@ tracks/2/keys = {
 "values": [ 4 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite2:visible")
+tracks/3/path = NodePath("Player:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = false
 tracks/3/imported = false
@@ -312,7 +309,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Sprite2:frame")
+tracks/4/path = NodePath("Player:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = false
 tracks/4/imported = false
@@ -324,19 +321,22 @@ tracks/4/keys = {
 "values": [ 4.0 ]
 }
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12.2319, 18.3358 )
+
 [node name="Player" type="KinematicBody2D" groups=["player"]]
 position = Vector2( 0, 1 )
 collision_mask = 14
 script = ExtResource( 1 )
 speed = 400
 
-[node name="Sprite2" type="Sprite" parent="."]
+[node name="Player" type="Sprite" parent="."]
 position = Vector2( 0.249997, 0.222763 )
 scale = Vector2( 2.37109, 2.11286 )
 texture = ExtResource( 4 )
 hframes = 5
 vframes = 4
-frame = 5
+frame = 1
 __meta__ = {
 "_aseprite_wizard_config_": {
 "layer": "",
@@ -350,6 +350,14 @@ __meta__ = {
 },
 "_editor_description_": ""
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+root_node = NodePath("../..")
+anims/Dance = SubResource( 8 )
+anims/Idle = SubResource( 4 )
+anims/PlayerDeath = SubResource( 9 )
+anims/Turn_Left = SubResource( 5 )
+anims/Turn_Right = SubResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1, 3 )
@@ -366,13 +374,6 @@ position = Vector2( -1, -44 )
 [node name="right" type="Position2D" parent="."]
 position = Vector2( 23, -44 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Dance = SubResource( 8 )
-anims/Death = SubResource( 9 )
-anims/Idle = SubResource( 4 )
-anims/Turn_Left = SubResource( 5 )
-anims/Turn_Right = SubResource( 6 )
-
 [node name="Barkingsound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 0, -1 )
 stream = ExtResource( 3 )
@@ -380,3 +381,6 @@ volume_db = 15.928
 
 [node name="lasersound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+
+[connection signal="animation_finished" from="Player/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_started" from="Player/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_started"]

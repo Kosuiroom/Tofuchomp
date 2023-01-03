@@ -239,11 +239,10 @@ velocity = Vector2( 0, 50 )
 speed = 400
 armor = 1
 
-[node name="Sprite1" type="Sprite" parent="."]
+[node name="Smallenemy" type="Sprite" parent="."]
 texture = ExtResource( 3 )
 hframes = 4
 vframes = 4
-frame = 15
 __meta__ = {
 "_aseprite_wizard_config_": {
 "layer": "",
@@ -259,7 +258,7 @@ __meta__ = {
 }
 
 [node name="SpriteAnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Sprite1")
+root_node = NodePath("../Smallenemy")
 anims/Attack = SubResource( 3 )
 anims/Death = SubResource( 4 )
 anims/Idle = SubResource( 5 )

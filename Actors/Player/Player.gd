@@ -7,7 +7,7 @@ var velocity := Vector2()
 var e_laser = preload("res://Actors/Player/Laser.tscn")
 var e_biglaser = preload("res://Actors/Player/biglaser.tscn")
 var e_spread = preload("res://Actors/Player/spread.tscn")
-onready var Anime = $AnimationPlayer
+onready var Anime = $Player/AnimationPlayer
 onready var lasersound = $lasersound
 onready var barkingsound = $Barkingsound
 var spread = false
@@ -71,11 +71,20 @@ func fire():
 
 func set_armor(value):
 	armor = value
-	if armor <= 0:
-		print("player died")
-		Anime.play("Death")
+	if armor == 0:
 		is_killed()
 		
 func is_killed():
-	yield(get_tree().create_timer(1), "timeout")
-	get_tree().change_scene("res://UI/Endgame.tscn")
+	Anime.play("PlayerDeath")
+	#yield(get_tree().create_timer(2), "timeout")
+	#get_tree().change_scene("res://UI/Endgame.tscn")
+
+
+func _on_AnimationPlayer_animation_started(anim_name):
+	if anim_name == "PlayerDeath":
+		print("started: ", anim_name)
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "PlayerDeath":
+		print("finished: ", anim_name)

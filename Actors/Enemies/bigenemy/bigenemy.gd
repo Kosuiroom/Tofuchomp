@@ -19,7 +19,6 @@ func _process(delta):
 func _on_bigenemy_body_entered(body):
 	if body.is_in_group("player"):
 		body.armor -= 1
-		body.Anime.play("Death")
 
 func _on_attack_timeout():
 	laser.play()
