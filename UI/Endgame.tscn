@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Audio/cutesong2_test.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Audio/flash_attack_2.mp3" type="AudioStream" id=2]
@@ -21,25 +21,37 @@
 [ext_resource path="res://Actors/Player/Player.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Assets/PIXEL CRAFT.ttf" type="DynamicFontData" id=20]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 5 )
 region = Rect2( 128, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 5 )
 region = Rect2( 256, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 5 )
-region = Rect2( 0, 128, 128, 128 )
+region = Rect2( 384, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 5 )
+region = Rect2( 512, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 5 )
+region = Rect2( 384, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 5 )
+region = Rect2( 512, 0, 128, 128 )
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -129,6 +141,7 @@ texture = ExtResource( 15 )
 position = Vector2( 115, 469 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 6 )
+frame = 2
 playing = true
 
 [node name="Title Background" parent="." instance=ExtResource( 3 )]

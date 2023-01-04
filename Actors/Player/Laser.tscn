@@ -25,6 +25,7 @@ tracks/0/keys = {
 }
 
 [node name="Laser" type="Area2D"]
+modulate = Color( 1.2, 1, 1.2, 1 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true

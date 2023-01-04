@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Actors/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Audio/lazershoot.wav" type="AudioStream" id=2]
 [ext_resource path="res://Audio/SFX/barkingsound.wav" type="AudioStream" id=3]
-[ext_resource path="res://Assets/Tofuchomp_Player.png" type="Texture" id=4]
+[ext_resource path="res://Audio/SFX/Losingsound.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Tofuchomp_Player.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=8]
 loop = true
@@ -17,7 +18,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ ExtResource( 6 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Player:hframes")
@@ -29,7 +30,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 5 ]
+"values": [ 6 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Player:vframes")
@@ -41,7 +42,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 4 ]
+"values": [ 5 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Player:visible")
@@ -81,7 +82,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ ExtResource( 6 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Player:hframes")
@@ -93,7 +94,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 5 ]
+"values": [ 6 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Player:vframes")
@@ -105,7 +106,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 4 ]
+"values": [ 5 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Player:visible")
@@ -134,48 +135,49 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=9]
 resource_name = "PlayerDeath"
+length = 1.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Player:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/imported = false
-tracks/0/enabled = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ ExtResource( 6 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Player:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/imported = false
-tracks/1/enabled = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 5 ]
+"values": [ 6 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Player:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = false
 tracks/2/imported = false
-tracks/2/enabled = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 4 ]
+"values": [ 5 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Player:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = false
 tracks/3/imported = false
-tracks/3/enabled = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -189,14 +191,15 @@ tracks/4/loop_wrap = false
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 5.0, 6.0, 7.0, 8.0, 8.0, 9.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0 ]
+"values": [ 5.0, 6.0, 7.0, 8.0, 8.0, 9.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0, 21.0, 22.0, 23.0, 24.0, 25.0 ]
 }
 
 [sub_resource type="Animation" id=5]
 length = 0.2
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Player:texture")
 tracks/0/interp = 1
@@ -207,7 +210,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ ExtResource( 6 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Player:hframes")
@@ -219,7 +222,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 5 ]
+"values": [ 6 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Player:vframes")
@@ -231,7 +234,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 4 ]
+"values": [ 5 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Player:visible")
@@ -260,6 +263,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=6]
 length = 0.2
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Player:texture")
 tracks/0/interp = 1
@@ -270,7 +274,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ ExtResource( 6 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Player:hframes")
@@ -282,7 +286,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 5 ]
+"values": [ 6 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Player:vframes")
@@ -294,7 +298,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 4 ]
+"values": [ 5 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Player:visible")
@@ -328,15 +332,14 @@ extents = Vector2( 12.2319, 18.3358 )
 position = Vector2( 0, 1 )
 collision_mask = 14
 script = ExtResource( 1 )
-speed = 400
+speed = 450
 
 [node name="Player" type="Sprite" parent="."]
 position = Vector2( 0.249997, 0.222763 )
 scale = Vector2( 2.37109, 2.11286 )
-texture = ExtResource( 4 )
-hframes = 5
-vframes = 4
-frame = 5
+texture = ExtResource( 6 )
+hframes = 6
+vframes = 5
 __meta__ = {
 "_aseprite_wizard_config_": {
 "layer": "",
@@ -344,8 +347,8 @@ __meta__ = {
 "o_folder": "res://Assets",
 "o_name": "",
 "only_visible": false,
-"op_exp": true,
-"player": "AnimationPlayer",
+"op_exp": false,
+"player": "Player/AnimationPlayer",
 "source": "C:/Users/David/OneDrive/Bilder/art/Asesprite/Projects/Tofuchomp/Aseprite Projects/Tofuchomp_Player.aseprite"
 },
 "_editor_description_": ""
@@ -381,5 +384,9 @@ volume_db = 15.928
 
 [node name="lasersound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+
+[node name="Losingsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+volume_db = 7.172
 
 [connection signal="animation_finished" from="Player/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

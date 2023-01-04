@@ -5,7 +5,8 @@ var bigenemy = preload("res://Actors/Enemies/bigenemy/bigenemy.tscn")
 var boss = preload("res://Actors/Enemies/boss/boss.tscn")
 onready var spawner = $respawntimer
 onready var pup = $powerupspawner
-onready var sound = $AudioStreamPlayer
+onready var level01_music = $Level01Music
+
 
 var spread = preload("res://Actors/powerups/spread.tscn")
 var biglaser = preload("res://Actors/powerups/biglaser.tscn")
@@ -21,8 +22,23 @@ var enemies = [
 ]
 
 func _ready():
-	sound.play()
-	randomize()
+	play_music()
+
+func _process(_delta: float) -> void:
+	print("im here")
+	if get_node("/root/Global").level01_music == false:
+		stop_music()
+	
+		
+func play_music():
+	if get_node("/root/Global").level01_music == true:
+		level01_music.play()
+		randomize()
+		
+func stop_music():
+		level01_music.stop()
+		
+
 
 func _on_respawntimer_timeout():
 	var xloc = rand_range(45,970)

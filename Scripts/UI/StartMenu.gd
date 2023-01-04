@@ -3,7 +3,10 @@ extends Control
 onready var startbtn = $MenuItems/StartBar
 onready var Buttonsound = $Buttonsound
 
+
 func _ready():
+	Global.level01_music = true
+	
 	startbtn.grab_focus()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	

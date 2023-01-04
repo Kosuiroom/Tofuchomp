@@ -7,9 +7,12 @@ var velocity := Vector2()
 var e_laser = preload("res://Actors/Player/Laser.tscn")
 var e_biglaser = preload("res://Actors/Player/biglaser.tscn")
 var e_spread = preload("res://Actors/Player/spread.tscn")
+var level01 = preload("res://GameScene/Level01.gd")
+
 onready var Anime = $Player/AnimationPlayer
 onready var lasersound = $lasersound
 onready var barkingsound = $Barkingsound
+onready var losingsound = $Losingsound
 onready var colshape = $CollisionShape2D
 var spread = false
 var biglaser:= false
@@ -23,8 +26,7 @@ func _physics_process(_delta: float) -> void:
 		playonce = false
 		print("exec once")
 #		colshape.set_deferred("disabled", true)
-		Anime.play("PlayerDeath")
-		yield(get_tree().create_timer(1), "timeout")
+		yield(get_tree().create_timer(1.5), "timeout")
 		get_tree().change_scene("res://UI/Endgame.tscn")
 		
 	
@@ -85,8 +87,10 @@ func fire():
 func set_armor(value):
 	armor = value
 	if armor == 0:
-		pass
-		
+		colshape.set_deferred("disabled", true)
+		get_node("/root/Global").level01_music = false
+		losingsound.play()
+		Anime.play("PlayerDeath")
 #func is_killed():
 #	print("iskilled")
 #	colshape.set_deferred("disabled", true)
