@@ -332,7 +332,7 @@ extents = Vector2( 12.2319, 18.3358 )
 position = Vector2( 0, 1 )
 collision_mask = 14
 script = ExtResource( 1 )
-speed = 450
+speed = 600
 
 [node name="Player" type="Sprite" parent="."]
 position = Vector2( 0.249997, 0.222763 )

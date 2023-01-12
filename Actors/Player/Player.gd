@@ -24,7 +24,6 @@ func _physics_process(_delta: float) -> void:
 	
 	if armor == 0:
 		playonce = false
-		print("exec once")
 #		colshape.set_deferred("disabled", true)
 		yield(get_tree().create_timer(1.5), "timeout")
 		get_tree().change_scene("res://UI/Endgame.tscn")

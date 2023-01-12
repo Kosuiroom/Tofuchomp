@@ -25,7 +25,6 @@ func _ready():
 	play_music()
 
 func _process(_delta: float) -> void:
-	print("im here")
 	if get_node("/root/Global").level01_music == false:
 		stop_music()
 	

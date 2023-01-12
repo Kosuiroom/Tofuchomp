@@ -241,7 +241,7 @@ extents = Vector2( 206.5, 109.344 )
 [node name="boss" type="Area2D" groups=["boss"]]
 position = Vector2( 326, 204 )
 script = ExtResource( 2 )
-armor = 5
+armor = 300
 shotcount = 2
 
 [node name="Body" type="Node2D" parent="."]
@@ -308,34 +308,34 @@ shape = SubResource( 1 )
 position = Vector2( 117, 141 )
 
 [node name="leftgun" type="Node2D" parent="."]
-position = Vector2( -220, -53 )
+position = Vector2( -226, -111 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="leftleft" type="Position2D" parent="leftgun"]
-position = Vector2( 21, 17 )
+position = Vector2( -22, 63 )
 
 [node name="leftmiddle" type="Position2D" parent="leftgun"]
-position = Vector2( 3, 37 )
+position = Vector2( -92, 9 )
 
 [node name="leftright" type="Position2D" parent="leftgun"]
-position = Vector2( -13, 52 )
+position = Vector2( 66, -21 )
 
 [node name="rightgun" type="Node2D" parent="."]
-position = Vector2( 442, -27 )
+position = Vector2( 445, -85 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="rightleft" type="Position2D" parent="rightgun"]
-position = Vector2( -38, -6 )
+position = Vector2( -74, -47 )
 
 [node name="rightmiddle" type="Position2D" parent="rightgun"]
-position = Vector2( -7.99998, 21 )
+position = Vector2( 70, -49 )
 
 [node name="rightright" type="Position2D" parent="rightgun"]
-position = Vector2( -23, 7 )
+position = Vector2( -7, 32 )
 
 [node name="mjau" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
@@ -351,7 +351,7 @@ stream = ExtResource( 4 )
 
 [node name="Hitsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-volume_db = 9.862
+volume_db = 5.253
 
 [connection signal="body_entered" from="." to="." method="_on_boss_body_entered"]
 [connection signal="animation_finished" from="Body/Head/HeadAnimationPlayer" to="." method="_on_HeadAnimationPlayer_animation_finished"]

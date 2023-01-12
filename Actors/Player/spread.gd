@@ -1,7 +1,7 @@
 extends Area2D
 
 var direction := Vector2.UP;
-var speed = 400
+var speed = 700
 
 func _process(delta):
 	translate(direction.normalized() * speed * delta)
