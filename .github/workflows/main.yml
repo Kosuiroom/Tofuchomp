@@ -15,6 +15,6 @@ jobs:
         FORCE_PUSH: "false"
         GITLAB_HOSTNAME: "gitlab.com"
         GITLAB_USERNAME: "svboxel"
-        GITLAB_PASSWORD: ${{ secrets.GITLAB }} 
+        GITLAB_PASSWORD: ${{ secrets.GITTEST }} 
         GITLAB_PROJECT_ID: "6"
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} // https://docs.github.com/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
